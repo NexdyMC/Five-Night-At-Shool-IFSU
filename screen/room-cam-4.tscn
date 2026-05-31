@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://by4b2g3x5bxkw"]
+
+[ext_resource type="Script" uid="uid://ch4lkijxt7qnn" path="res://script/room_cam_4.gd" id="1_1s34d"]
+[ext_resource type="Texture2D" uid="uid://c8j2ny3hymu16" path="res://textures/room_4/local_4_0.png" id="2_1s34d"]
+
+[node name="room-cam-4" type="Sprite2D"]
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_1s34d")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="room_4" type="Sprite2D" parent="."]
+position = Vector2(800, 400)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_1s34d")

@@ -1,0 +1,12 @@
+
+================ 30/05/2026 ================
+1. membuat jumpscare pada saat camera 1 
+if (camera_id == 2):
+	if time >= 1: jumpscare_Tachyon()
+	if time < 1: gagal reset to nol
+
+2. membuat function global supaay tidak adanya pengulangan code lagi 
+variabel = Global.name_variabel
+function = Global.name_Function()
+
+- 
