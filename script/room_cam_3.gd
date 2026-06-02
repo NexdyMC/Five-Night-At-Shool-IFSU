@@ -4,8 +4,13 @@ extends Sprite2D
 @onready var room_3 : Sprite2D = $"room_3"
 @onready var room_karoke : AudioStreamPlayer = $sound_room_karoke
 @onready var TachyonJump  : AudioStreamPlayer = $TachyonJump 
-@onready var timer : Label = $timer
 @onready var tachyon_sprite : Sprite2D = $TachyonEye 
+
+# --- Exstabilizar ---
+@onready var bar_biru: Sprite2D = $BarBiru # Sesuaikan dengan node bar biru milikmu
+@onready var btn_estabilizar: TextureButton = $ButtonEstabilizar
+@onready var audio_error: AudioStreamPlayer = $AudioError
+@onready var panel_error: Panel = $PanelError
 
 # --- EXPORT VARIABLES ---
 @export var kecepatan_geser : float = 50.0
@@ -23,6 +28,8 @@ var tachyon_muncul : bool = false
 var waktu_ditatap : float = 0.0
 var timer_muncul : float = 0.0
 var waktu_cooldown : float = 20.0
+
+
 
 # --- ASSETS / RESOURCES ---
 var room_step_1 = load("res://textures/room_3/local_2_teio_1_0.png")
@@ -44,7 +51,6 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	total_waktu += delta
-	timer.text = "time: " + str(int(total_waktu))
 	
 	# ==========================================
 	# 1. LOGIKA PERGERAKAN KAMERA (PANNING)

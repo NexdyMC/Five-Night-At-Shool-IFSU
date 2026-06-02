@@ -8,6 +8,8 @@ var is_mask_on : bool = true
 var sisa_baterai: int = 100
 var jam_sekarang: int = 12
 var light : int = 0
+var stability : int = 100.0
+var night : int = 1
 
 # ==========================================
 # LEVEL KARAKTER (NIGHT 1 DEFAULT)
@@ -26,6 +28,7 @@ var suzuka_scurity_visible : bool = true
 var special_scurity_visible : bool = true
 var tachyon_scurity_visible : bool = false
 
+var sound_jumpscare : String = "none"
 # 0 = idle/aman
 # 1 = mulai aktif (bisa naik/turun)
 # 2 = mengintip

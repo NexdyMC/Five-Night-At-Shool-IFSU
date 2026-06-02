@@ -9,4 +9,4 @@ if (camera_id == 2):
 variabel = Global.name_variabel
 function = Global.name_Function()
 
-- 
+3 menambahkan sebuah animasi transisi open, close, and glitch pada cameta kedalam main

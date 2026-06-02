@@ -17,56 +17,62 @@ var arah : int = 1
 
 var voltar_jump = load("res://sounds/jumpscare/Vodkajump_susto.wav")
 
-# 2. Status AI (0 = Ngumpet, 1 = Di Kamera, 2 = Di Depan)
+# 2. Status AI (0 = Ngumpet, 1 = Di Kamera/Nyerang, 2 = Selesai/Game Over)
 var timer_aksi: float = 0.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	voltar_sprite_room.visible = false
 	Global.voltar_state = 0
-	voltar_sprite_room.visible = false
 	timer_aksi = randf_range(10.0, 20.0)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# ==========================================
+	# 1. LOGIKA PERGERAKAN KAMERA
+	# ==========================================
 	room_2.position.x += kecepatan_geser * arah * delta
 
 	if room_2.position.x <= -260:
 		room_2.position.x = -260
-		arah = 1  # Balik ke kanan
+		arah = 1 
 	elif room_2.position.x >= 0:
 		room_2.position.x = 0
-		arah = -1 # Balik ke kiri
+		arah = -1 
 		
-	# Kurangi timer setiap frame
+	# ==========================================
+	# 2. LOGIKA AI & JUMPSCARE VODKA / VOLTAR
+	# ==========================================
 	if timer_aksi > 0:
 		timer_aksi -= delta
 	else:
 		# Jika waktu habis, jalankan aksi berdasarkan statusnya saat ini
 		if Global.voltar_state == 0:
-			_muncul_di_kamera()
+			# Fase 0: Dari Ngumpet -> Muncul di Kamera
+			Global.voltar_state = 1
+			voltar_sprite_room.visible = true
+			timer_aksi = randf_range(20.0, 30.0)
+
 		elif Global.voltar_state == 1:
-			_muncul_di_depan()
-		elif Global.voltar_state == 2:
+			# Fase 1: Waktu di kamera habis -> Waktunya mengeksekusi serangan
 			if Global.is_mask_on == true:
+				# Pemain pakai masker, Vodka tertipu dan pergi
 				print("Pemain selamat! Vodka pergi.")
 				Global.voltar_state = 0
 				voltar_sprite_room.visible = false
 				timer_aksi = randf_range(10.0, 20.0)
 			else:
+				# Pemain tidak pakai masker -> JUMPSCARE!
+				Global.voltar_state = 2 # Ubah state jadi 2 agar kode berhenti di sini
+				voltar_sprite_room.visible = false 
+				
 				jumpscare.stream = voltar_jump
 				jumpscare.play()
 				print("[Vodka] GAME OVER")
-				pass
-
-	
-func _muncul_di_kamera() -> void:
-	Global.voltar_state = 1
-	voltar_sprite_room.visible = true
-	timer_aksi = randf_range(20.0, 30.0)
-
-func _muncul_di_depan() -> void:
-	Global.voltar_state = 2
-	voltar_sprite_room.visible = false 
-	timer_aksi = 10.0
+				
+				# Beri timer sangat lama agar aman dan tidak memutar audio ulang
+				timer_aksi = 999.0 
+				
+		elif Global.voltar_state == 2:
+			# Fase 2: Game Over. 
+			# Kita beri perintah 'pass' agar mesin Godot diam dan tidak melakukan apa-apa.
+			# Ini yang mencegah terjadinya looping suara!
+			pass
