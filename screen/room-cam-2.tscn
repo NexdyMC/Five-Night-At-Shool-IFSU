@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgboqy1ssjwta"]
 
 [ext_resource type="Script" uid="uid://di67ewci5hurx" path="res://script/room_cam_2.gd" id="1_n62yc"]
-[ext_resource type="Texture2D" uid="uid://4ty1k70fjgri" path="res://textures/local_1_1.png" id="2_1ifwj"]
+[ext_resource type="Texture2D" uid="uid://ccari43f1ig7s" path="res://textures/room_2/local_2.png" id="2_jnabu"]
 [ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="3_jnabu"]
 
 [node name="room-cam-2" type="Sprite2D"]
@@ -14,13 +14,13 @@ script = ExtResource("1_n62yc")
 position = Vector2(-260.433, 0)
 
 [node name="room_2" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(791.381, 369.039)
-scale = Vector2(1.25368, 1.26061)
-texture = ExtResource("2_1ifwj")
+position = Vector2(843.468, 357.679)
+scale = Vector2(1.25368, 1.22905)
+texture = ExtResource("2_jnabu")
 
 [node name="Voltar_splite_room" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(656.178, 508.121)
-scale = Vector2(0.395901, 0.395901)
+position = Vector2(885.472, 411.151)
+scale = Vector2(0.24141, 0.24141)
 texture = ExtResource("3_jnabu")
 
 [node name="jumpscare" type="AudioStreamPlayer" parent="."]

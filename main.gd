@@ -4,7 +4,7 @@ extends Node2D
 
 # monitor camera
 @onready var object_monitor_panel: Panel = $MonitorCanvas/MonitorPanel
-@onready var object_mask_panel: Sprite2D = $TextureButton/sound_mask/mask
+@onready var object_mask_panel: TextureButton = $CanvasGroup/TextureButton
 
 # sprite panel monitor
 @onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-1"
@@ -12,6 +12,7 @@ extends Node2D
 @onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-3"
 @onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-4"
 @onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-5"
+#@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-6"
 
 # map camera button $MonitorCanvas/
 @onready var btn_cam1: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam1
@@ -19,17 +20,16 @@ extends Node2D
 @onready var btn_cam3: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam3
 @onready var btn_cam4: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam4
 @onready var btn_cam5: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam5
+#@onready var btn_cam6: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam6
 
-@onready var panel_animess: Sprite2D = $animes
-@onready var ardianTimer : Timer = $GameTimer
-@onready var suryalabel : Label = $suryalabel
-
-@onready var voltar_sprite : Sprite2D = $Voltar_splite
+@onready var voltar_sprite : Sprite2D = $CanvasGroup/Voltar_splite
 
 # Audio
-@onready var sound_mask : AudioStreamPlayer = $TextureButton/sound_mask
+@onready var audio_sound_mask : AudioStreamPlayer = $CanvasGroup/TextureButton/sound_mask
 @onready var audio_AudioCamera : AudioStreamPlayer2D = $AudioCamera
 @onready var anim_camera_monitor = $MonitorCanvas/anim_camera_monitor
+@onready var anim_tachyon_jump = $anim_tachyon_jump
+@onready var anim_char_jump = $anim_char_jump
 
 var sound_open_camera  = preload("res://sounds/camera/camera_close.wav")
 var sound_switch_camera  = preload("res://sounds/camera/camera_switch.wav")
@@ -44,24 +44,17 @@ func _ready() -> void:
 	#	SETTING MONITOR TO FALSE
 	Global.monitor_panel = false
 	object_monitor_panel.visible = false
-	anim_camera_monitor.stop()
+	
+	# animasi 
+	anim_camera_monitor.reset_section()
+	anim_tachyon_jump.play("RESET")
+	anim_char_jump.play("RESET")
 	
 	#	TAMPILKAN : CAM1
-	object_cam1_panel.visible = true
 	Global.camera_room_id = 0 
-	
-#	
-	panel_animess.visible = false
 	voltar_sprite.visible = false
-	ardianTimer.timeout.connect(munculkan_animess)
-	print("[INFO] Monitor Visible: ", str(object_monitor_panel.visible) + " Global Monitor: ", str(Global.monitor_panel))
 	
 func _process(delta: float) -> void:
-	 
-	# Kita cek: jika timer sedang berjalan, ambil nilai sisa waktunya!
-	if ardianTimer.time_left > 0:
-		var sisa_detik = snappedf(ardianTimer.time_left, 0.1)
-		suryalabel.text = "Sisa Waktu: " + str(sisa_detik) + " detik"
 	
 	# Di dalam _process pada Main Script kamu:
 	if Global.voltar_state == 2:
@@ -71,7 +64,13 @@ func _process(delta: float) -> void:
 	
 	if Global.tachyon_scurity_visible == true:
 		_on_close_monitor()
+		anim_tachyon_jump.play("jump_tachyon")
 		Global.tachyon_scurity_visible = false
+	
+	if Global.goldship_jump == true and Global.monitor_panel == true:
+		_on_close_monitor()
+		anim_char_jump.play("susto_jump")
+		Global.goldship_jump == false
 
 	if Input.is_action_just_pressed("buka_monitor"):
 		var timer_now = Time.get_ticks_msec()
@@ -102,19 +101,7 @@ func _process(delta: float) -> void:
 			print("Cooldown masih aktif! Jangan di-spam!")
 		print("Monitor status: " + str(Global.monitor_panel))
 
-
-# 2. Fungsi yang otomatis berjalan setelah 5 detik (Sinyal timeout dari GameTimer)
-func _on_game_timer_timeout() -> void:
-	print("Sudah lebih dari 5 detik!")
 	
-	# MEMUNCULKAN PANEL "animess"
-	panel_animess.visible = true
-	
-	# Efek tambahan: kamu bisa menghentikan game atau memutar suara di sini
-func munculkan_animess() -> void :
-	suryalabel.text = "ada monster di depan mu"
-	_on_close_monitor()
-	suryalabel.visible = true
 	
 func _on_close_monitor():
 	anim_camera_monitor.play("anim_close_monitor")
@@ -137,12 +124,14 @@ func open_camera(id_camera: int, description: String):
 	object_cam3_panel.visible = false 
 	object_cam4_panel.visible = false
 	object_cam5_panel.visible = false
+	#object_cam6_panel.visible = false
 	
 	btn_cam1.disabled = false
 	btn_cam2.disabled = false
 	btn_cam3.disabled = false
 	btn_cam4.disabled = false
 	btn_cam5.disabled = false
+	#btn_cam6.disabled = false
 	
 	await get_tree().create_timer(0.5).timeout
 	audio_AudioCamera.stream = sound_fan_camera
@@ -163,6 +152,9 @@ func open_camera(id_camera: int, description: String):
 	elif id_camera == 4:
 		Global.camera_room_id = 4 
 		object_cam5_panel.visible = true
+	#elif id_camera == 5:
+		#Global.camera_room_id = 5
+		#object_cam6_panel.visible = true
 		
 	print("camera id: " + str(Global.camera_room_id))
 	
@@ -187,26 +179,18 @@ func _on_cam_5_button_pressed() -> void:
 	btn_cam5.disabled = true
 
 
-
-func _on_btn_reset_t_ime_pressed() -> void:
-	print("Tombol Reset Ditekan! Waktu diulang ke 10 menit.")
-	panel_animess.visible = false
-	ardianTimer.start(10)
-	pass # Replace with function body.
-
-
 func _on_mask_pressed() -> void:
 #	Pakai Masker : true
 	if Global.is_mask_on == false:
 		Global.is_mask_on = true
 		object_mask_panel.visible = true
-		sound_mask.stream = sound_mask_on
-		sound_mask.play()
+		audio_sound_mask.stream = sound_mask_on
+		audio_sound_mask.play()
 		print("masker dipake : " + str(Global.is_mask_on))
 #	Pakai Masker : false
 	elif Global.is_mask_on == true:
 		Global.is_mask_on = false
 		object_mask_panel.visible = false
-		sound_mask.stream = sound_mask_off
-		sound_mask.play()
+		audio_sound_mask.stream = sound_mask_off
+		audio_sound_mask.play()
 		print("masker dipake: ", Global.is_mask_on)

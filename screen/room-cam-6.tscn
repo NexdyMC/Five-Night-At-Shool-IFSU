@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwdf0uhckmyfq"]
+
+[ext_resource type="Texture2D" uid="uid://ccari43f1ig7s" path="res://textures/room_2/local_2.png" id="1_3g6dp"]
+[ext_resource type="Script" uid="uid://3y8a31bj0w17" path="res://script/room_cam_6.gd" id="1_v7863"]
+[ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="2_v7863"]
+
+[node name="Sprite2D" type="Sprite2D"]
+script = ExtResource("1_v7863")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(0, 323.81)
+scale = Vector2(1.06633, 1.00945)
+
+[node name="room_1" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(705.223, 12.0763)
+scale = Vector2(1.03912, 1.03912)
+texture = ExtResource("1_3g6dp")
+
+[node name="Midori" type="Sprite2D" parent="CanvasGroup"]
+visible = false
+position = Vector2(937.796, 100.007)
+scale = Vector2(0.286361, 0.302497)
+texture = ExtResource("2_v7863")

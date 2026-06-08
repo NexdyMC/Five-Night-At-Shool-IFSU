@@ -7,10 +7,10 @@ extends Sprite2D
 @onready var tachyon_sprite : Sprite2D = $TachyonEye 
 
 # --- Exstabilizar ---
-@onready var bar_biru: Sprite2D = $BarBiru # Sesuaikan dengan node bar biru milikmu
-@onready var btn_estabilizar: TextureButton = $ButtonEstabilizar
-@onready var audio_error: AudioStreamPlayer = $AudioError
-@onready var panel_error: Panel = $PanelError
+#@onready var bar_biru: Sprite2D = $BarBiru # Sesuaikan dengan node bar biru milikmu
+#@onready var btn_estabilizar: TextureButton = $ButtonEstabilizar
+#@onready var audio_error: AudioStreamPlayer = $AudioError
+#@onready var panel_error: Panel = $PanelError
 
 # --- EXPORT VARIABLES ---
 @export var kecepatan_geser : float = 50.0
@@ -81,9 +81,8 @@ func _process(delta: float) -> void:
 		timer_muncul += delta
 		if timer_muncul >= waktu_cooldown:
 			_munculkan_tachyon()
-			
+
 	elif tachyon_muncul == true:
-		# LOGIKA YANG DIPERBAIKI (Tidak lagi dikomentari)
 		if (Global.camera_room_id == 2) and (Global.monitor_panel == true):
 			waktu_ditatap += delta
 			

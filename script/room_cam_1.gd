@@ -1,7 +1,7 @@
 extends Sprite2D
 
 # --- ONREADY VARIABLES ---
-@onready var room_1 : Sprite2D = $"room_1"
+@onready var room_1 : CanvasGroup = $"CanvasGroup"
 
 # --- EXPORT VARIABLES ---
 @export var kecepatan_geser : float = 50.0
@@ -20,11 +20,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	room_1.offset.x += kecepatan_geser * arah * delta
-
-	if room_1.offset.x <= -200:
-		room_1.offset.x = -200
-		arah = 1  # Balik ke kanan
-	elif room_1.offset.x >= 0:
-		room_1.offset.x = 0
-		arah = -1 # Balik ke kiri
+	room_1.position.x += kecepatan_geser * arah * delta
+	
+	if room_1.position.x <= -260:
+		room_1.position.x = -260
+		arah = 1 
+	elif room_1.position.x >= 0:
+		room_1.position.x = 0
+		arah = -1 

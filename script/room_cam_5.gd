@@ -5,7 +5,7 @@ extends Node2D
 # ==========================================
 @onready var label  : Label    = $Label
 @onready var room_5 : Sprite2D = $room_5
-@onready var goldS_jump : AudioStreamPlayer = $jumpscare
+
 # ==========================================
 # 2. KONFIGURASI PANNING KAMERA
 # ==========================================
@@ -112,8 +112,7 @@ func _on_timer_tutorial_timeout() -> void:
 # 9. GAME OVER
 # ==========================================
 func _trigger_game_over() -> void: 
-	goldS_jump.stream = game_over
-	goldS_jump.play()
+	Global.goldship_jump = true
 	print("[GoldShip] GAME OVER! = 13")
 
 # ==========================================

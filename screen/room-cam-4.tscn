@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://by4b2g3x5bxkw"]
+[gd_scene load_steps=5 format=3 uid="uid://by4b2g3x5bxkw"]
 
 [ext_resource type="Script" uid="uid://ch4lkijxt7qnn" path="res://script/room_cam_4.gd" id="1_1s34d"]
-[ext_resource type="Texture2D" uid="uid://c8j2ny3hymu16" path="res://textures/room_4/local_4_0.png" id="2_1s34d"]
+[ext_resource type="Texture2D" uid="uid://bixg1pf70do8t" path="res://textures/room_4/local_4_1.png" id="2_nansx"]
+[ext_resource type="Texture2D" uid="uid://d38lwuv6hsx37" path="res://textures/charakter/Yuuka.png" id="3_5mtgu"]
+[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="4_s2qbj"]
 
 [node name="room-cam-4" type="Sprite2D"]
 scale = Vector2(0.902344, 0.902344)
@@ -9,7 +11,19 @@ script = ExtResource("1_1s34d")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="room_4" type="Sprite2D" parent="."]
-position = Vector2(800, 400)
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("2_1s34d")
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="room_4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(845.167, 379.567)
+scale = Vector2(1.249, 1.22222)
+texture = ExtResource("2_nansx")
+
+[node name="MomoiBattle" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(310.303, 535.273)
+scale = Vector2(0.43244, 0.43244)
+texture = ExtResource("4_s2qbj")
+
+[node name="Yuuka" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1174.72, 721.454)
+scale = Vector2(0.52792, 0.52792)
+texture = ExtResource("3_5mtgu")

@@ -1,7 +1,7 @@
 extends Sprite2D
 
 # --- ONREADY VARIABLES ---
-@onready var room_4 : Sprite2D = $"room_4"
+@onready var room_4 : CanvasGroup = $CanvasGroup
 
 # --- EXPORT VARIABLES ---
 @export var kecepatan_geser : float = 50.0
@@ -21,11 +21,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 		# 1. LOGIKA PERGERAKAN KAMERA / CCTV PANNING
-	room_4.offset.x += kecepatan_geser * arah * delta
+	room_4.position.x += kecepatan_geser * arah * delta
 
-	if room_4.offset.x <= -200:
-		room_4.offset.x = -200
+	if room_4.position.x <= -200:
+		room_4.position.x = -200
 		arah = 1  # Balik ke kanan
-	elif room_4.offset.x >= 0:
-		room_4.offset.x = 0
+	elif room_4.position.x >= 0:
+		room_4.position.x = 0
 		arah = -1 # Balik ke kiri

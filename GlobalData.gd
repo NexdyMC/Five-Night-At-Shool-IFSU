@@ -8,7 +8,7 @@ var is_mask_on : bool = true
 var sisa_baterai: int = 100
 var jam_sekarang: int = 12
 var light : int = 0
-var stability : int = 100.0
+var stability : float = 100.0
 var night : int = 1
 
 # ==========================================
@@ -20,8 +20,13 @@ var VodkaC_level : int = 1
 var Cafe_level : int = 1
 var GoldS_level : int = 1
 
-var goldship_estado : int = 0
-var voltar_state : int = 0 
+var goldship_estado : int = 0	# 0 - 6 
+var voltar_state : int = 0  	# 0 - 3
+var suzuka_state : int = 0  	# 0 - 3 
+
+var goldship_jump : bool = false
+var voltar_jump : bool = false
+var suzuka_jump : bool = false
 
 var voltar_scurity_visible : bool = true
 var suzuka_scurity_visible : bool = true

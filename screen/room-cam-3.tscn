@@ -17,16 +17,11 @@ position = Vector2(800, 400)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("2_gxwm3")
 
-[node name="sound_room_karoke" type="AudioStreamPlayer" parent="."]
-
 [node name="TachyonEye" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(669.949, 398.684)
 scale = Vector2(1.04257, 1.04257)
 texture = ExtResource("3_a2h4m")
-
-[node name="TachyonJump" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_8ause")
 
 [node name="barr_value" type="Sprite2D" parent="."]
 position = Vector2(248.312, 716.987)
@@ -37,9 +32,18 @@ texture = ExtResource("5_5ilbx")
 position = Vector2(240.485, 651.636)
 texture = ExtResource("6_ip453")
 
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
 [node name="btn_estability" type="TextureButton" parent="."]
-offset_left = 438.857
-offset_top = 663.827
-offset_right = 786.857
-offset_bottom = 749.827
+offset_left = 437.749
+offset_top = 679.342
+offset_right = 678.749
+offset_bottom = 739.342
 texture_normal = ExtResource("7_f7ftl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TachyonJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8ause")
+
+[node name="sound_room_karoke" type="AudioStreamPlayer" parent="."]
