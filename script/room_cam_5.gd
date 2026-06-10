@@ -4,7 +4,8 @@ extends Node2D
 # 1. NODE REFERENCES
 # ==========================================
 @onready var label  : Label    = $Label
-@onready var room_5 : Sprite2D = $room_5
+@onready var room_5 : CanvasGroup = $CanvasGroup
+@onready var room_5_0 : TextureRect = $CanvasGroup/TextureRect
 
 # ==========================================
 # 2. KONFIGURASI PANNING KAMERA
@@ -40,7 +41,6 @@ var game_over = load("res://sounds/jumpscare/GoldShip_susto.wav")
 # 5. READY
 # ==========================================
 func _ready() -> void:
-	room_5.offset.x = 0
 	Global.goldship_estado = 0
 
 	timer_maju.timeout.connect(_on_timer_maju_timeout)
@@ -59,13 +59,7 @@ func _ready() -> void:
 # 6. PROCESS — panning + visual + cek player
 # ==========================================
 func _process(delta: float) -> void:
-	room_5.offset.x += kecepatan_geser * arah * delta
-	if room_5.offset.x <= batas_kiri:
-		room_5.offset.x = batas_kiri
-		arah = 1
-	elif room_5.offset.x >= batas_kanan:
-		room_5.offset.x = batas_kanan
-		arah = -1
+	Global.camera_position_bolak_balik(room_5, 50.0, delta, -200, 0)
 
 	_cek_player_lihat()
 	_update_visual()
@@ -121,20 +115,20 @@ func _trigger_game_over() -> void:
 func _update_visual() -> void:
 	match Global.goldship_estado:
 		0:
-			room_5.texture = room_step_1
+			room_5_0.texture = room_step_1
 			label.text = "Gold Ship — Aman (Estado %d)" % Global.goldship_estado
 		1:
-			room_5.texture = room_step_2
+			room_5_0.texture = room_step_2
 			label.text = "Gold Ship — Mengintip"
 		2:
-			room_5.texture = room_step_3
+			room_5_0.texture = room_step_3
 			label.text = "Gold Ship — Bersiap"
 		3:
-			room_5.texture = room_step_4
+			room_5_0.texture = room_step_4
 			label.text = "Gold Ship — siap untuk keluar!"
 		4:
-			room_5.texture = room_step_5
+			room_5_0.texture = room_step_5
 			label.text = "Gold Ship — KELUAR!"
 		_:
-			room_5.texture = room_step_1
+			room_5_0.texture = room_step_1
 			label.text = "Gold Ship — Aman"

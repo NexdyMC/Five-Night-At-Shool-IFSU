@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpb5dn8seqf4r"]
+
+[ext_resource type="Script" uid="uid://drf120cw80g23" path="res://dadu.gd" id="1_pjpox"]
+[ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="2_xflkb"]
+[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="3_vtxbs"]
+[ext_resource type="Texture2D" uid="uid://d38lwuv6hsx37" path="res://textures/charakter/Yuuka.png" id="4_31trw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pjpox")
+
+[node name="Suzuka" type="Sprite2D" parent="."]
+position = Vector2(261, 320)
+scale = Vector2(0.345938, 0.345938)
+texture = ExtResource("2_xflkb")
+
+[node name="SpecialWeek" type="Sprite2D" parent="."]
+position = Vector2(607, 297)
+scale = Vector2(0.355882, 0.355882)
+texture = ExtResource("3_vtxbs")
+
+[node name="Voltar" type="Sprite2D" parent="."]
+position = Vector2(982, 283)
+scale = Vector2(0.389535, 0.389535)
+texture = ExtResource("4_31trw")
+
+[node name="SuzukaLabel" type="Label" parent="."]
+offset_left = 209.0
+offset_top = 577.0
+offset_right = 249.0
+offset_bottom = 600.0
+
+[node name="VoltarLabel" type="Label" parent="."]
+offset_left = 970.0
+offset_top = 571.0
+offset_right = 1010.0
+offset_bottom = 594.0
+
+[node name="SpecialWeekLabel" type="Label" parent="."]
+offset_left = 661.0
+offset_top = 583.0
+offset_right = 701.0
+offset_bottom = 606.0
+
+[node name="TimerDadu" type="Timer" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgboqy1ssjwta"]
+[gd_scene load_steps=5 format=3 uid="uid://dgboqy1ssjwta"]
 
 [ext_resource type="Script" uid="uid://di67ewci5hurx" path="res://script/room_cam_2.gd" id="1_n62yc"]
-[ext_resource type="Texture2D" uid="uid://ccari43f1ig7s" path="res://textures/room_2/local_2.png" id="2_jnabu"]
+[ext_resource type="Texture2D" uid="uid://ccari43f1ig7s" path="res://textures/room_2/local_2_0.png" id="2_jnabu"]
+[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="3_8su0o"]
 [ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="3_jnabu"]
 
 [node name="room-cam-2" type="Sprite2D"]
@@ -13,14 +14,31 @@ script = ExtResource("1_n62yc")
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 position = Vector2(-260.433, 0)
 
-[node name="room_2" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(843.468, 357.679)
-scale = Vector2(1.25368, 1.22905)
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
+offset_left = -10.0
+offset_top = -143.303
+offset_right = 1692.0
+offset_bottom = 814.697
 texture = ExtResource("2_jnabu")
 
-[node name="Voltar_splite_room" type="Sprite2D" parent="CanvasGroup"]
+[node name="Momoi_3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(412.26, 496.485)
+scale = Vector2(0.341174, 0.341174)
+texture = ExtResource("3_8su0o")
+
+[node name="Momoi_4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1322.11, 458.805)
+scale = Vector2(0.36023, 0.36023)
+texture = ExtResource("3_8su0o")
+
+[node name="Voltar_3" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(885.472, 411.151)
 scale = Vector2(0.24141, 0.24141)
+texture = ExtResource("3_jnabu")
+
+[node name="Voltar_4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1172.5, 531.948)
+scale = Vector2(0.398718, 0.398718)
 texture = ExtResource("3_jnabu")
 
 [node name="jumpscare" type="AudioStreamPlayer" parent="."]

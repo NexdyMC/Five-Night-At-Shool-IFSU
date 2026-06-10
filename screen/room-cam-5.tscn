@@ -7,9 +7,12 @@
 scale = Vector2(0.902344, 0.902344)
 script = ExtResource("1_setjy")
 
-[node name="room_5" type="Sprite2D" parent="."]
-position = Vector2(802.217, 400)
-scale = Vector2(1.05, 1.05)
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
+offset_top = -68.71
+offset_right = 1755.0
+offset_bottom = 809.29
 texture = ExtResource("2_epypp")
 
 [node name="Label" type="Label" parent="."]

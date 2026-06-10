@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwdf0uhckmyfq"]
 
-[ext_resource type="Texture2D" uid="uid://ccari43f1ig7s" path="res://textures/room_2/local_2.png" id="1_3g6dp"]
 [ext_resource type="Script" uid="uid://3y8a31bj0w17" path="res://script/room_cam_6.gd" id="1_v7863"]
-[ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="2_v7863"]
+[ext_resource type="Texture2D" uid="uid://4ty1k70fjgri" path="res://textures/room_6/local_6_0.png" id="2_8x80m"]
+[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="3_v7863"]
 
 [node name="Sprite2D" type="Sprite2D"]
 script = ExtResource("1_v7863")
@@ -13,13 +13,19 @@ script = ExtResource("1_v7863")
 position = Vector2(0, 323.81)
 scale = Vector2(1.06633, 1.00945)
 
-[node name="room_1" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(705.223, 12.0763)
-scale = Vector2(1.03912, 1.03912)
-texture = ExtResource("1_3g6dp")
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
+offset_left = 1.0
+offset_top = -463.0
+offset_right = 1452.0
+offset_bottom = 353.0
+texture = ExtResource("2_8x80m")
 
-[node name="Midori" type="Sprite2D" parent="CanvasGroup"]
-visible = false
-position = Vector2(937.796, 100.007)
-scale = Vector2(0.286361, 0.302497)
-texture = ExtResource("2_v7863")
+[node name="Momoi_1" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(450.142, 162.653)
+scale = Vector2(0.318509, 0.336456)
+texture = ExtResource("3_v7863")
+
+[node name="Momoi_2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1012.82, 305.305)
+scale = Vector2(0.495495, 0.523415)
+texture = ExtResource("3_v7863")

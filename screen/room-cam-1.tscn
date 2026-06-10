@@ -14,12 +14,19 @@ script = ExtResource("1_mxfea")
 position = Vector2(0, 323.81)
 scale = Vector2(1.06633, 1.00945)
 
-[node name="room_1" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(664.937, 5.18905)
-scale = Vector2(1.03912, 1.03912)
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
+offset_left = -7.0
+offset_top = -426.0
+offset_right = 1374.0
+offset_bottom = 351.0
 texture = ExtResource("2_nlq54")
 
-[node name="Midori" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(937.796, 100.007)
+[node name="Midori_1" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(743.092, 116.989)
 scale = Vector2(0.286361, 0.302497)
+texture = ExtResource("3_785q5")
+
+[node name="Midori_2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1095.88, 283.983)
+scale = Vector2(0.508778, 0.537447)
 texture = ExtResource("3_785q5")

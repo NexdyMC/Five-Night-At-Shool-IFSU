@@ -50,22 +50,21 @@ signal jumpscare_triggered(karakter_id: int)
 # ==========================================
 # FUNCTION GLOBAL
 # ==========================================
-#func on_camera(panel_camera: Panel):
-	#panel_camera.visible = true
-	#monitor_panel == true
-	#
-#func off_camera(panel_camera: Panel):
-	#panel_camera.visible = false
-	#monitor_panel == false	
+
+# Fungsi ini sekarang menerima objek apa saja (bisa CanvasGroup, Sprite2D, dll)
+# Kita juga butuh kamus (Dictionary) atau referensi status agar 'arah' tidak reset.
+# Cara termudah adalah meminta objek itu sendiri yang menyimpan variabel arahnya.
+
+func camera_position_bolak_balik(objek: Node2D, kecepatan: float, delta: float, batas_kiri: float, batas_kanan: float) -> void:
+	if not objek.has_meta("arah"):
+		objek.set_meta("arah", 1)
 	
-#if (Global.monitor_panel == true):
-	#AudioCamera.stream = sound_camera_close
-	#AudioCamera.play()
-	#MonitorPanel.visible = false
-	#Global.monitor_panel = false
-#
-#elif (Global.monitor_panel == false):
-	#AudioCamera.stream = sound_camera_open
-	#AudioCamera.play()
-	#MonitorPanel.visible = true
-	#Global.monitor_panel = true
+	var arah_sekarang = objek.get_meta("arah")
+	objek.position.x += kecepatan * arah_sekarang * delta
+	
+	if objek.position.x <= batas_kiri:
+		objek.position.x = batas_kiri
+		objek.set_meta("arah", 1)
+	elif objek.position.x >= batas_kanan:
+		objek.position.x = batas_kanan
+		objek.set_meta("arah", -1)
