@@ -7,6 +7,8 @@
 [node name="room-cam-1" type="Sprite2D"]
 scale = Vector2(1.05, 1.05)
 script = ExtResource("1_mxfea")
+batas_kiri = -150.0
+batas_kanan = 0.0
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -15,11 +17,12 @@ position = Vector2(0, 323.81)
 scale = Vector2(1.06633, 1.00945)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
-offset_left = -7.0
-offset_top = -426.0
-offset_right = 1374.0
-offset_bottom = 351.0
+offset_left = -7.14511
+offset_top = -335.874
+offset_right = 1285.85
+offset_bottom = 384.126
 texture = ExtResource("2_nlq54")
+metadata/_edit_use_anchors_ = true
 
 [node name="Midori_1" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(743.092, 116.989)

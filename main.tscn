@@ -134,7 +134,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:texture")
+tracks/0/path = NodePath("MonitorCanvas/camera_monitor:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -146,7 +146,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:position")
+tracks/1/path = NodePath("MonitorCanvas/camera_monitor:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -158,7 +158,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:scale")
+tracks/2/path = NodePath("MonitorCanvas/camera_monitor:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -174,7 +174,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:texture")
+tracks/0/path = NodePath("MonitorCanvas/camera_monitor:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -190,7 +190,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:scale")
+tracks/0/path = NodePath("MonitorCanvas/camera_monitor:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -202,7 +202,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:position")
+tracks/1/path = NodePath("MonitorCanvas/camera_monitor:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -214,7 +214,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MonitorCanvas/anim_camera_monitor/camera_monitor:texture")
+tracks/2/path = NodePath("MonitorCanvas/camera_monitor:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -449,6 +449,7 @@ texture = ExtResource("23_d13ii")
 [node name="MonitorCanvas" type="CanvasLayer" parent="."]
 
 [node name="MonitorPanel" type="Panel" parent="MonitorCanvas"]
+visible = false
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 1216.0
@@ -467,7 +468,7 @@ offset_bottom = 719.736
 [node name="CameraViewport" type="SubViewport" parent="MonitorCanvas/MonitorPanel/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1220, 730)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="room-cam-1" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("3_4c57u")]
 position = Vector2(-1.13687e-13, 18)
@@ -486,7 +487,6 @@ visible = false
 visible = false
 
 [node name="glitch" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("3_82xsv")]
-visible = false
 scale = Vector2(2, 2)
 
 [node name="MapRoom" type="Sprite2D" parent="MonitorCanvas/MonitorPanel"]
@@ -589,8 +589,14 @@ libraries = {
 }
 speed_scale = 2.0
 
-[node name="camera_monitor" type="Sprite2D" parent="MonitorCanvas/anim_camera_monitor"]
-position = Vector2(600, 360)
+[node name="camera_monitor" type="TextureRect" parent="MonitorCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 166.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.878477, 0.9375)
 texture = ExtResource("20_ryguw")
 

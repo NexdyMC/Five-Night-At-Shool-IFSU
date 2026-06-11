@@ -63,13 +63,13 @@ func _on_lempar_dadu() -> void:
 	var hasil : Karakter = sisi_dadu[randi() % sisi_dadu.size()]
 	print("[Dadu] Hasil: ", Karakter.keys()[hasil])
 	
-	if suzuka_maju >= 5:
+	if suzuka_maju >= 4:
 		suzuka_maju = 0 
 		suzuka_sprite.visible  = false
-	if specialw_maju >= 6:
+	if specialw_maju >= 4:
 		specialw_maju = 0
 		specialw_sprite.visible = false
-	if voltar_maju >= 5:
+	if voltar_maju >= 4:
 		voltar_maju = 0
 		voltar_sprite.visible  = false
 		

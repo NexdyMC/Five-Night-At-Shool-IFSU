@@ -11,6 +11,7 @@ var light : int = 0
 var stability : float = 100.0
 var night : int = 1
 
+#malam 1 - 6
 # ==========================================
 # LEVEL KARAKTER (NIGHT 1 DEFAULT)
 # ==========================================
