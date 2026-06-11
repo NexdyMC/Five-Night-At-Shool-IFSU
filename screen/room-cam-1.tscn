@@ -25,11 +25,13 @@ texture = ExtResource("2_nlq54")
 metadata/_edit_use_anchors_ = true
 
 [node name="Midori_1" type="Sprite2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(743.092, 116.989)
 scale = Vector2(0.286361, 0.302497)
 texture = ExtResource("3_785q5")
 
 [node name="Midori_2" type="Sprite2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(1095.88, 283.983)
 scale = Vector2(0.508778, 0.537447)
 texture = ExtResource("3_785q5")

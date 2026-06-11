@@ -1,10 +1,13 @@
 extends Node2D
 
-# 1. PANGGIL NODENYA KE KODE
-
+#region Variabel
 # monitor camera
 @onready var object_monitor_panel: Panel = $MonitorCanvas/MonitorPanel
 @onready var object_mask_panel: TextureButton = $CanvasGroup/TextureButton
+@onready var vodka_step_5 : Sprite2D = $CanvasGroup/Voltar_step_5
+@onready var suzuka_step_5 : Sprite2D = $CanvasGroup/Suzuka_step_5
+
+@onready var timer_dadu : Timer = $time_charakter_state
 
 # sprite panel monitor
 @onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-1"
@@ -12,7 +15,7 @@ extends Node2D
 @onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-3"
 @onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-4"
 @onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-5"
-#@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-6"
+@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-6"
 
 # map camera button $MonitorCanvas/
 @onready var btn_cam1: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam1
@@ -20,15 +23,13 @@ extends Node2D
 @onready var btn_cam3: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam3
 @onready var btn_cam4: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam4
 @onready var btn_cam5: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam5
-#@onready var btn_cam6: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam6
-
-@onready var voltar_sprite : Sprite2D = $CanvasGroup/Voltar_splite
+@onready var btn_cam6: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam6
 
 # Audio
 @onready var audio_sound_mask : AudioStreamPlayer = $CanvasGroup/TextureButton/sound_mask
 @onready var audio_AudioCamera : AudioStreamPlayer2D = $AudioCamera
 @onready var anim_camera_monitor = $MonitorCanvas/anim_camera_monitor
-@onready var anim_tachyon_jump = $anim_tachyon_jump
+#@onready var anim_tachyon_jump = $anim_tachyon_jump
 @onready var anim_char_jump = $anim_char_jump
 
 var sound_open_camera  = preload("res://sounds/camera/camera_close.wav")
@@ -39,81 +40,123 @@ var sound_mask_off = preload("res://sounds/mask/mask_off.wav")
 var sound_mask_on = preload("res://sounds/mask/mask_on.wav")
 var cooldown_open_monitor : int = 0
 
+enum Karakter { TIDAK_ADA, SUZUKA, SPECIAL_WEEK, VOLTAR }
+
+var sisi_dadu : Array = [
+	Karakter.TIDAK_ADA,
+	Karakter.TIDAK_ADA,
+	Karakter.SUZUKA,
+	Karakter.SPECIAL_WEEK,
+	Karakter.SPECIAL_WEEK,
+	Karakter.SPECIAL_WEEK,
+	Karakter.VOLTAR,
+	Karakter.VOLTAR
+]
+var block_time : Array = [7.0, 5.0, 3.0]
+
+#endregion
 
 func _ready() -> void:
-	#	SETTING MONITOR TO FALSE
 	Global.monitor_panel = false
 	object_monitor_panel.visible = false
 	
-	# animasi 
 	anim_camera_monitor.reset_section()
-	anim_tachyon_jump.play("RESET")
+	#anim_tachyon_jump.play("RESET")
 	anim_char_jump.play("RESET")
 	
-	#	TAMPILKAN : CAM1
 	Global.camera_room_id = 0 
-	voltar_sprite.visible = false
+	vodka_step_5.visible = false
+	suzuka_step_5.visible = false
+	
+	Global.ship_state = 0		# 0 - 6 
+	Global.voltar_state = 0  	# 0 - 3
+	Global.suzuka_state = 0  	# 0 - 3 
+	print("[INFO] Memulai Lemparan dadu")
+	timer_dadu.timeout.connect(_on_lempar_dadu)
+	_set_delay_acak()
 	
 func _process(delta: float) -> void:
 	
-	# Di dalam _process pada Main Script kamu:
-	if Global.voltar_state == 2:
-		voltar_sprite.visible = true
-	if Global.voltar_state <= 1:
-		voltar_sprite.visible = false
+	if Global.voltar_state == 5:
+		vodka_step_5.visible = true
+	else:
+		vodka_step_5.visible = false
+		
+	if Global.suzuka_state == 6:
+		suzuka_step_5.visible = true
+	else:
+		suzuka_step_5.visible = false
 	
-	if Global.tachyon_scurity_visible == true:
-		_on_close_monitor()
-		anim_tachyon_jump.play("jump_tachyon")
-		Global.tachyon_scurity_visible = false
-	
-	if Global.goldship_jump == true and Global.monitor_panel == true:
-		_on_close_monitor()
-		anim_char_jump.play("susto_jump")
-		Global.goldship_jump == false
+	if Global.voltar_state >= 6:
+		Global.voltar_state = 0
+	if Global.suzuka_state >= 7:
+		Global.suzuka_state = 0
+	if Global.ship_state >= 6:
+		Global.ship_state = 0
+		
+	#if Global.tachyon_scurity_visible == true:
+		#_on_close_monitor()
+		#anim_tachyon_jump.play("jump_tachyon")
+		#Global.tachyon_scurity_visible = false
+	#
+	#if Global.goldship_jump == true and Global.monitor_panel == true:
+		#_on_close_monitor()
+		#anim_char_jump.play("susto_jump")
+		#Global.goldship_jump == false
 
 	if Input.is_action_just_pressed("buka_monitor"):
 		var timer_now = Time.get_ticks_msec()
 		if timer_now - cooldown_open_monitor >= 500:
 			cooldown_open_monitor = timer_now
-					
+
 			# KONDISI 1: TUTUP MONITOR
 			if Global.monitor_panel == true and object_monitor_panel.visible == true:
-				anim_camera_monitor.play("anim_close_monitor")
-				audio_AudioCamera.stream = sound_close_camera
-				audio_AudioCamera.play()
+				anim_camera_monitor.play("anim_camera_close")
 				object_monitor_panel.visible = false
 				await get_tree().create_timer(0.5).timeout
-				
 				Global.monitor_panel = false
 			
 			# KONDISI 2: BUKA MONITOR
 			elif Global.monitor_panel == false:
-				audio_AudioCamera.stream = sound_open_camera
-				audio_AudioCamera.play()
-				anim_camera_monitor.play("anim_open_monitor")
-				
+				anim_camera_monitor.play("anim_camera_open")
 				await get_tree().create_timer(0.5).timeout  
 				object_monitor_panel.visible = true
 				Global.monitor_panel = true
-				anim_camera_monitor.play("anim_effect_monitor")
-				
+				anim_camera_monitor.play("anim_camera_effect")
+
 			print("Cooldown masih aktif! Jangan di-spam!")
 		print("Monitor status: " + str(Global.monitor_panel))
 
+#region Function
+func _on_lempar_dadu() -> void:
+	var hasil : Karakter = sisi_dadu[randi() % sisi_dadu.size()]
+	print("[Dadu] Hasil: ", Karakter.keys()[hasil])
 	
-	
+	match hasil:
+		Karakter.SUZUKA:
+			Global.suzuka_state += 1
+		Karakter.SPECIAL_WEEK:
+			Global.ship_state += 1
+		Karakter.VOLTAR:
+			Global.voltar_state += 1
+		Karakter.TIDAK_ADA:
+			pass
+	_set_delay_acak()
+
+func _set_delay_acak() -> void:
+	timer_dadu.wait_time = block_time[randi() % block_time.size()]
+	timer_dadu.start()
+	print("[Dadu] Lemparan berikutnya dalam ", timer_dadu.wait_time, " detik.")
+
 func _on_close_monitor():
-	anim_camera_monitor.play("anim_close_monitor")
-	audio_AudioCamera.stream = sound_close_camera
-	audio_AudioCamera.play()
+	anim_camera_monitor.play("anim_camera_close")
 	object_monitor_panel.visible = false
 	await get_tree().create_timer(0.5).timeout
 	Global.monitor_panel = false
 
 # Membuat fungsi dengan parameter int dan String
 func open_camera(id_camera: int, description: String):
-	anim_camera_monitor.play("anim_effect_monitor")
+	anim_camera_monitor.play("anim_camera_effect")
 	
 	# 1. Matikan semua kamera dulu agar bersih
 	audio_AudioCamera.stream = sound_switch_camera
@@ -124,14 +167,14 @@ func open_camera(id_camera: int, description: String):
 	object_cam3_panel.visible = false 
 	object_cam4_panel.visible = false
 	object_cam5_panel.visible = false
-	#object_cam6_panel.visible = false
+	object_cam6_panel.visible = false
 	
 	btn_cam1.disabled = false
 	btn_cam2.disabled = false
 	btn_cam3.disabled = false
 	btn_cam4.disabled = false
 	btn_cam5.disabled = false
-	#btn_cam6.disabled = false
+	btn_cam6.disabled = false
 	
 	await get_tree().create_timer(0.5).timeout
 	audio_AudioCamera.stream = sound_fan_camera
@@ -152,9 +195,9 @@ func open_camera(id_camera: int, description: String):
 	elif id_camera == 4:
 		Global.camera_room_id = 4 
 		object_cam5_panel.visible = true
-	#elif id_camera == 5:
-		#Global.camera_room_id = 5
-		#object_cam6_panel.visible = true
+	elif id_camera == 5:
+		Global.camera_room_id = 5
+		object_cam6_panel.visible = true
 		
 	print("camera id: " + str(Global.camera_room_id))
 	
@@ -178,7 +221,10 @@ func _on_cam_5_button_pressed() -> void:
 	open_camera(4, "Camera 5")
 	btn_cam5.disabled = true
 
-
+func _on_cam_6_button_pressed() -> void:
+	open_camera(5, "Camera 6")
+	btn_cam6.disabled = true
+	
 func _on_mask_pressed() -> void:
 #	Pakai Masker : true
 	if Global.is_mask_on == false:
@@ -194,3 +240,4 @@ func _on_mask_pressed() -> void:
 		audio_sound_mask.stream = sound_mask_off
 		audio_sound_mask.play()
 		print("masker dipake: ", Global.is_mask_on)
+#endregion

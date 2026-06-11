@@ -21,7 +21,7 @@ var VodkaC_level : int = 1
 var Cafe_level : int = 1
 var GoldS_level : int = 1
 
-var goldship_estado : int = 0	# 0 - 6 
+var ship_state : int = 0	# 0 - 6 
 var voltar_state : int = 0  	# 0 - 3
 var suzuka_state : int = 0  	# 0 - 3 
 
@@ -35,18 +35,6 @@ var special_scurity_visible : bool = true
 var tachyon_scurity_visible : bool = false
 
 var sound_jumpscare : String = "none"
-# 0 = idle/aman
-# 1 = mulai aktif (bisa naik/turun)
-# 2 = mengintip
-# 3 = bersiap keluar
-# 4 = KELUAR — trigger serangan
-# 5 = sedang countdown serangan
- 
-# ==========================================
-# SIGNAL GLOBAL (untuk game over, jumpscare, dll)
-# ==========================================
-signal game_over(karakter_id: int)
-signal jumpscare_triggered(karakter_id: int)
 
 # ==========================================
 # FUNCTION GLOBAL

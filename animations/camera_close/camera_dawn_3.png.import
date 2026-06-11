@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2lopq5f78okc"
-path="res://.godot/imported/camera_up_effect_0.png-afa06e6ea1633c92cd1eded389e7c1ea.ctex"
+uid="uid://ch0n5asbs3g7r"
+path="res://.godot/imported/camera_dawn_3.png-962b13f3f275a4c5b2cf73f0bca324e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/camera_up_effect_0.png"
-dest_files=["res://.godot/imported/camera_up_effect_0.png-afa06e6ea1633c92cd1eded389e7c1ea.ctex"]
+source_file="res://animations/camera_close/camera_dawn_3.png"
+dest_files=["res://.godot/imported/camera_dawn_3.png-962b13f3f275a4c5b2cf73f0bca324e2.ctex"]
 
 [params]
 

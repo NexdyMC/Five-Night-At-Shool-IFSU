@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c02jcooxa8drj"
-path="res://.godot/imported/camera_dawn_2.png-e1a4e6f649b1dd7126aec21a4f827234.ctex"
+path="res://.godot/imported/camera_dawn_2.png-3e9a43db0f78e46ceee1c9b153b9d63d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/camera_dawn_2.png"
-dest_files=["res://.godot/imported/camera_dawn_2.png-e1a4e6f649b1dd7126aec21a4f827234.ctex"]
+source_file="res://animations/camera_close/camera_dawn_2.png"
+dest_files=["res://.godot/imported/camera_dawn_2.png-3e9a43db0f78e46ceee1c9b153b9d63d.ctex"]
 
 [params]
 

@@ -18,12 +18,12 @@ offset_right = 1764.0
 offset_bottom = 816.0
 texture = ExtResource("2_nansx")
 
-[node name="Momoi_5" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(980.779, 544.138)
+[node name="Momoi_4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(673.801, 487.619)
 scale = Vector2(0.43244, 0.43244)
 texture = ExtResource("4_s2qbj")
 
-[node name="Momoi_6" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(361.281, 668.26)
+[node name="Momoi_5" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1081.63, 594.008)
 scale = Vector2(0.43244, 0.43244)
 texture = ExtResource("4_s2qbj")

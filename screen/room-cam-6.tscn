@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://4ty1k70fjgri" path="res://textures/room_6/local_6_0.png" id="2_8x80m"]
 [ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="3_v7863"]
 
-[node name="Sprite2D" type="Sprite2D"]
+[node name="room-cam6" type="Sprite2D"]
 script = ExtResource("1_v7863")
 
 [node name="Timer" type="Timer" parent="."]
@@ -14,18 +14,13 @@ position = Vector2(0, 323.81)
 scale = Vector2(1.06633, 1.00945)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
-offset_left = 1.0
-offset_top = -463.0
-offset_right = 1452.0
-offset_bottom = 353.0
+offset_top = -384.18
+offset_right = 1451.0
+offset_bottom = 431.82
 texture = ExtResource("2_8x80m")
+metadata/_edit_use_anchors_ = true
 
 [node name="Momoi_1" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(450.142, 162.653)
+position = Vector2(720.227, 194.353)
 scale = Vector2(0.318509, 0.336456)
-texture = ExtResource("3_v7863")
-
-[node name="Momoi_2" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(1012.82, 305.305)
-scale = Vector2(0.495495, 0.523415)
 texture = ExtResource("3_v7863")

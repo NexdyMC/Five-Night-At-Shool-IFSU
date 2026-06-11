@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ee1v83cyo7f7"
-path="res://.godot/imported/Sprite25_2.png-e56b78abbc2af2c48b5a04447c390cf3.ctex"
+uid="uid://2lopq5f78okc"
+path="res://.godot/imported/camera_up_effect_0.png-6941109248c05f9905f7cd3a3fcfcbae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Sprite25_2.png"
-dest_files=["res://.godot/imported/Sprite25_2.png-e56b78abbc2af2c48b5a04447c390cf3.ctex"]
+source_file="res://animations/camera_effect/camera_up_effect_0.png"
+dest_files=["res://.godot/imported/camera_up_effect_0.png-6941109248c05f9905f7cd3a3fcfcbae.ctex"]
 
 [params]
 

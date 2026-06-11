@@ -47,7 +47,7 @@ func _update_layar_debug() -> void:
 	
 	teks += "--------------- [Entity] --------------- \n"
 	teks += "State Voltar: " + str(Global.voltar_state) + "\n"
-	teks += "State Gold: " + str(Global.goldship_estado) + "\n"
+	teks += "State Gold: " + str(Global.ship_state) + "\n"
 	teks += "State Suzuka: " + str(Global.suzuka_state) + "\n"
 	teks += "Voltar : " + str(Global.voltar_scurity_visible) + "\n"
 	teks += "Suzuka : " + str(Global.suzuka_scurity_visible) + "\n"

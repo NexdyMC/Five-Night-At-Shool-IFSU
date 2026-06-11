@@ -63,6 +63,6 @@ func _process(delta: float) -> void:
 	# ==========================================
 	if siap_dimainkan == true:
 		if (Global.camera_room_id == 2) and (Global.monitor_panel == true):
-			room_karoke.volume_db = linear_to_db(1.0) 
+			room_karoke.volume_db = linear_to_db(0.3) 
 		else:
 			room_karoke.volume_db = linear_to_db(0.0)

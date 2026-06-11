@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cyr2unodo0hs2"]
 
-[ext_resource type="Texture2D" uid="uid://d0yglcx47srcl" path="res://animations/Sprite25_0.png" id="1_20tv3"]
-[ext_resource type="Texture2D" uid="uid://cqk0dry14bruh" path="res://animations/Sprite25_1.png" id="2_pnx6y"]
-[ext_resource type="Texture2D" uid="uid://ee1v83cyo7f7" path="res://animations/Sprite25_2.png" id="3_sjr46"]
-[ext_resource type="Texture2D" uid="uid://cnqk8h0roxy2c" path="res://animations/Sprite25_3.png" id="4_2fx1f"]
-[ext_resource type="Texture2D" uid="uid://dir7vlkiuuil1" path="res://animations/Sprite25_4.png" id="5_i500t"]
+[ext_resource type="Texture2D" uid="uid://d0yglcx47srcl" path="res://animations/camera_glitch/Sprite25_0.png" id="1_20tv3"]
+[ext_resource type="Texture2D" uid="uid://cqk0dry14bruh" path="res://animations/camera_glitch/Sprite25_1.png" id="2_pnx6y"]
+[ext_resource type="Texture2D" uid="uid://ee1v83cyo7f7" path="res://animations/camera_glitch/Sprite25_2.png" id="3_sjr46"]
+[ext_resource type="Texture2D" uid="uid://cnqk8h0roxy2c" path="res://animations/camera_glitch/Sprite25_3.png" id="4_2fx1f"]
+[ext_resource type="Texture2D" uid="uid://dir7vlkiuuil1" path="res://animations/camera_glitch/Sprite25_4.png" id="5_i500t"]
 [ext_resource type="Script" uid="uid://bspbc11c4esuy" path="res://animated_sprite_2d.gd" id="6_5rh6k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t2kye"]

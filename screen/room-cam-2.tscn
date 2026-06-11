@@ -22,21 +22,24 @@ offset_bottom = 814.697
 texture = ExtResource("2_jnabu")
 
 [node name="Momoi_3" type="Sprite2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(412.26, 496.485)
 scale = Vector2(0.341174, 0.341174)
 texture = ExtResource("3_8su0o")
 
 [node name="Momoi_4" type="Sprite2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(1322.11, 458.805)
 scale = Vector2(0.36023, 0.36023)
 texture = ExtResource("3_8su0o")
 
-[node name="Voltar_3" type="Sprite2D" parent="CanvasGroup"]
+[node name="Midori_3" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(885.472, 411.151)
 scale = Vector2(0.24141, 0.24141)
 texture = ExtResource("3_jnabu")
 
-[node name="Voltar_4" type="Sprite2D" parent="CanvasGroup"]
+[node name="Midori_4" type="Sprite2D" parent="CanvasGroup"]
+visible = false
 position = Vector2(1172.5, 531.948)
 scale = Vector2(0.398718, 0.398718)
 texture = ExtResource("3_jnabu")

@@ -11,18 +11,11 @@ extends Node2D
 
 @onready var voltar_sprite  : Sprite2D = $Voltar
 @onready var voltar_label   : Label    = $VoltarLabel
-
 @onready var timer_dadu : Timer = $TimerDadu
 
 
-# ==========================================
-# DADU — daftar karakter
-# Tambah atau kurangi nama di sini untuk expand
-# ==========================================
 enum Karakter { TIDAK_ADA, SUZUKA, SPECIAL_WEEK, VOLTAR }
 
-# Sisi-sisi dadu — bisa duplikat untuk atur peluang
-# Contoh: TIDAK_ADA muncul 3x = lebih sering tidak ada yang maju
 var sisi_dadu : Array = [
 	Karakter.TIDAK_ADA,
 	Karakter.TIDAK_ADA,
@@ -91,7 +84,6 @@ func _on_lempar_dadu() -> void:
 
 		Karakter.TIDAK_ADA:
 			pass
-			#print("[Dadu] Tidak ada yang muncul kali ini.")
 
 	# Lempar lagi dengan delay baru
 	_set_delay_acak()
