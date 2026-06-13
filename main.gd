@@ -10,12 +10,12 @@ extends Node2D
 @onready var timer_dadu : Timer = $time_charakter_state
 
 # sprite panel monitor
-@onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-1"
-@onready var object_cam2_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-2"
-@onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-3"
-@onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-4"
-@onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-5"
-@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room-cam-6"
+@onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_1"
+@onready var object_cam2_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_2"
+@onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_3"
+@onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_4"
+@onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_5"
+@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_6"
 
 # map camera button $MonitorCanvas/
 @onready var btn_cam1: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam1
@@ -76,23 +76,7 @@ func _ready() -> void:
 	_set_delay_acak()
 	
 func _process(delta: float) -> void:
-	
-	if Global.voltar_state == 5:
-		vodka_step_5.visible = true
-	else:
-		vodka_step_5.visible = false
-		
-	if Global.suzuka_state == 6:
-		suzuka_step_5.visible = true
-	else:
-		suzuka_step_5.visible = false
-	
-	if Global.voltar_state >= 6:
-		Global.voltar_state = 0
-	if Global.suzuka_state >= 7:
-		Global.suzuka_state = 0
-	if Global.ship_state >= 6:
-		Global.ship_state = 0
+	_cek_entity_()
 		
 	#if Global.tachyon_scurity_visible == true:
 		#_on_close_monitor()
@@ -151,10 +135,27 @@ func _set_delay_acak() -> void:
 func _on_close_monitor():
 	anim_camera_monitor.play("anim_camera_close")
 	object_monitor_panel.visible = false
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	Global.monitor_panel = false
 
-# Membuat fungsi dengan parameter int dan String
+func _cek_entity_() -> void:
+	if Global.voltar_state == 5:
+		vodka_step_5.visible = true
+	else:
+		vodka_step_5.visible = false
+		
+	if Global.suzuka_state == 6:
+		suzuka_step_5.visible = true
+	else:
+		suzuka_step_5.visible = false
+	
+	if Global.voltar_state >= 6:
+		Global.voltar_state = 0
+	if Global.suzuka_state >= 7:
+		Global.suzuka_state = 0
+	if Global.ship_state >= 6:
+		Global.ship_state = 0
+		
 func open_camera(id_camera: int, description: String):
 	anim_camera_monitor.play("anim_camera_effect")
 	
@@ -176,7 +177,7 @@ func open_camera(id_camera: int, description: String):
 	btn_cam5.disabled = false
 	btn_cam6.disabled = false
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.4).timeout
 	audio_AudioCamera.stream = sound_fan_camera
 	audio_AudioCamera.play()
 

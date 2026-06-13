@@ -15,10 +15,10 @@ script = ExtResource("1_n62yc")
 position = Vector2(-260.433, 0)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
-offset_left = -10.0
-offset_top = -143.303
-offset_right = 1692.0
-offset_bottom = 814.697
+offset_left = -14.4067
+offset_top = -115.255
+offset_right = 1687.59
+offset_bottom = 842.745
 texture = ExtResource("2_jnabu")
 
 [node name="Momoi_3" type="Sprite2D" parent="CanvasGroup"]

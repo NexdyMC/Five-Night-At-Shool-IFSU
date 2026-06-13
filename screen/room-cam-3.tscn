@@ -14,7 +14,7 @@ script = ExtResource("1_gxwm3")
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
 [node name="room_3" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(858.382, 367.131)
+position = Vector2(859.982, 398.961)
 scale = Vector2(1.12185, 1.12185)
 texture = ExtResource("2_gxwm3")
 
