@@ -4,8 +4,8 @@ extends Node2D
 # monitor camera
 @onready var object_monitor_panel: Panel = $MonitorCanvas/MonitorPanel
 @onready var object_mask_panel: TextureButton = $CanvasGroup/TextureButton
-@onready var vodka_step_5 : Sprite2D = $CanvasGroup/Voltar_step_5
-@onready var suzuka_step_5 : Sprite2D = $CanvasGroup/Suzuka_step_5
+@onready var vodka_step_5 : Sprite2D = $CanvasGroup/VoltarStep5
+@onready var suzuka_step_5 : Sprite2D = $CanvasGroup/SuzukaStep5
 
 @onready var timer_dadu : Timer = $time_charakter_state
 

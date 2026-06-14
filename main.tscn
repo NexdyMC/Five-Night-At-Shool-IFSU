@@ -421,6 +421,9 @@ _data = {
 &"susto_jump": SubResource("Animation_0arob")
 }
 
+[sub_resource type="Animation" id="Animation_cyx1q"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_1vm84"]
 resource_name = "anim_kedip_redindicator"
 loop_mode = 1
@@ -449,9 +452,6 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_cyx1q"]
-length = 0.001
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0dhbp"]
 _data = {
 &"RESET": SubResource("Animation_cyx1q"),
@@ -463,7 +463,7 @@ script = ExtResource("1_ig7tw")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
-[node name="room_scurity" type="TextureRect" parent="CanvasGroup"]
+[node name="RoomScurity" type="TextureRect" parent="CanvasGroup"]
 offset_right = 1763.0
 offset_bottom = 992.0
 texture = ExtResource("2_getpj")
@@ -472,12 +472,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OfficeSprite" type="Sprite2D" parent="CanvasGroup"]
 
-[node name="Suzuka_step_5" type="Sprite2D" parent="CanvasGroup"]
+[node name="SuzukaStep5" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(1016, 416)
 scale = Vector2(0.161497, 0.161497)
 texture = ExtResource("38_come4")
 
-[node name="Voltar_step_5" type="Sprite2D" parent="CanvasGroup"]
+[node name="VoltarStep5" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(384, 400)
 scale = Vector2(0.162465, 0.162465)
 texture = ExtResource("9_4c57u")
@@ -502,6 +502,7 @@ texture = ExtResource("23_d13ii")
 [node name="MonitorCanvas" type="CanvasLayer" parent="."]
 
 [node name="MonitorPanel" type="Panel" parent="MonitorCanvas"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -526,7 +527,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CameraViewport" type="SubViewport" parent="MonitorCanvas/MonitorPanel/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1220, 730)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="room_cam_1" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("3_4c57u")]
 position = Vector2(-1.13687e-13, 18)
