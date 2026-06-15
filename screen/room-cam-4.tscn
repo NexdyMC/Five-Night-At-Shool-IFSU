@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://by4b2g3x5bxkw"]
+
+[ext_resource type="Script" uid="uid://ch4lkijxt7qnn" path="res://script/room_cam_4.gd" id="1_1s34d"]
+[ext_resource type="Texture2D" uid="uid://bixg1pf70do8t" path="res://textures/room_4/local_4_0.png" id="2_nansx"]
+[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="4_s2qbj"]
+
+[node name="room-cam-4" type="Sprite2D"]
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_1s34d")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
+offset_top = -177.0
+offset_right = 1764.0
+offset_bottom = 816.0
+texture = ExtResource("2_nansx")
+
+[node name="Momoi_4" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(673.801, 487.619)
+scale = Vector2(0.43244, 0.43244)
+texture = ExtResource("4_s2qbj")
+
+[node name="Momoi_5" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(1081.63, 594.008)
+scale = Vector2(0.43244, 0.43244)
+texture = ExtResource("4_s2qbj")

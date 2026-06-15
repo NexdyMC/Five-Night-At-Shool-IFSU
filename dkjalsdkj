@@ -1,0 +1,80 @@
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  1) [gd_scene load_steps=4 format=3 uid="uid://cue6vug4ysd34"]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  2) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  3) [ext_resource type="Script" uid="uid://dsc57rk87tjoi" path="res://start-sceen.gd" id="1_fhfbs"]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  4) [ext_resource type="Texture2D" uid="uid://bmlou8vqrbu1v" path="res://textures/menu_screne.png" id="2_3j6ov"]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  5) [ext_resource type="Texture2D" uid="uid://f1bjyvphmod5" path="res://textures/title.png" id="3_fiqn8"]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  6) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  7) [node name="Node2D" type="Node2D"]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  8) script = ExtResource("1_fhfbs")
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700  9) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 10) [node name="ChatGptImageJun9,2026,072641Am2" type="Sprite2D" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 11) position = Vector2(561.717, 354.25)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 12) scale = Vector2(0.968139, 0.968139)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 13) texture = ExtResource("2_3j6ov")
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 14) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 15) [node name="Sprite2D" type="Sprite2D" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 16) position = Vector2(180, 83)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 17) texture = ExtResource("3_fiqn8")
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 18) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 19) [node name="Button1" type="Button" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 20) offset_left = 60.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 21) offset_top = 232.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 22) offset_right = 323.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 23) offset_bottom = 299.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 24) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 25) [node name="Button3" type="Button" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 26) offset_left = 917.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 27) offset_top = 593.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 28) offset_right = 1180.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 29) offset_bottom = 660.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 30) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 31) [node name="Button2" type="Button" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 32) offset_left = 58.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 33) offset_top = 358.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 34) offset_right = 328.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 35) offset_bottom = 425.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 36) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 37) [node name="Button4" type="Button" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 38) offset_left = 62.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 39) offset_top = 484.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 40) offset_right = 330.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 41) offset_bottom = 551.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 42) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 43) [node name="Label" type="Label" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 44) offset_left = -135.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 45) offset_top = 237.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 46) offset_right = 131.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 47) offset_bottom = 269.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 48) scale = Vector2(2.41, 2.41)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 49) text = "start"
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 50) horizontal_alignment = 1
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 51) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 52) [node name="Label4" type="Label" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 53) offset_left = 732.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 54) offset_top = 597.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 55) offset_right = 998.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 56) offset_bottom = 629.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 57) scale = Vector2(2.41, 2.41)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 58) text = "info"
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 59) horizontal_alignment = 1
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 60) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 61) [node name="Label2" type="Label" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 62) offset_left = -127.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 63) offset_top = 359.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 64) offset_right = 140.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 65) offset_bottom = 391.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 66) scale = Vector2(2.41, 2.41)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 67) text = "setting"
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 68) horizontal_alignment = 1
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 69) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 70) [node name="Label3" type="Label" parent="."]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 71) offset_left = -133.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 72) offset_top = 481.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 73) offset_right = 134.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 74) offset_bottom = 513.0
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 75) scale = Vector2(2.41, 2.41)
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 76) text = "night"
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 77) horizontal_alignment = 1
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 78) 
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 79) [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+f6bb9161 (NexdyMC 2026-06-11 12:56:23 +0700 80) [connection signal="pressed" from="Button3" to="." method="_on_credit_pressed"]

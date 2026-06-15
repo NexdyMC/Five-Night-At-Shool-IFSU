@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqyus77udo73l"]
+
+[ext_resource type="Script" uid="uid://dxha7hdgp3cn6" path="res://script/room_cam_3.gd" id="1_gxwm3"]
+[ext_resource type="Texture2D" uid="uid://b8f8yv4gus8lr" path="res://textures/room_3/local_2_0.png" id="2_gxwm3"]
+
+[node name="room-cam-3" type="Sprite2D"]
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_gxwm3")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="room_3" type="Sprite2D" parent="."]
+position = Vector2(800, 400)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_gxwm3")
+
+[node name="sound_room_karoke" type="AudioStreamPlayer" parent="."]
+
+[node name="timer" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "timer"

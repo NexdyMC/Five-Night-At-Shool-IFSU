@@ -1,0 +1,37 @@
+extends Node2D
+
+#region Variabel and Node
+
+@onready var label  : Label    = $Label
+@onready var room_5 : CanvasGroup = $CanvasGroup
+@onready var room_5_0 : TextureRect = $CanvasGroup/TextureRect
+
+var room_step_0 = preload("res://textures/room_5/local_5_0.png")
+var room_step_1 = preload("res://textures/room_5/local_5_golshi_1_0.png")
+var room_step_2 = preload("res://textures/room_5/local_5_golshi_2_0.png")
+var room_step_3 = preload("res://textures/room_5/local_5_golshi_3_0.png")
+var room_step_4 = preload("res://textures/room_5/local_5_golshi_4_0.png")
+
+var game_over = load("res://sounds/jumpscare/GoldShip_susto.wav")
+
+#endregion
+
+func _ready() -> void:
+	Global.ship_state = 0
+
+func _process(delta: float) -> void:
+	Global.camera_position_bolak_balik(room_5, 50.0, delta, -200, 0)
+	
+	if Global.ship_state == 1:
+			room_5_0.texture = room_step_1
+	elif Global.ship_state == 2:
+			room_5_0.texture = room_step_2
+	elif Global.ship_state == 3:
+			room_5_0.texture = room_step_3
+	elif Global.ship_state == 4:
+			room_5_0.texture = room_step_4
+	else:
+		room_5_0.texture = room_step_0
+#region Function
+
+#endregion

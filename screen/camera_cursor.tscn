@@ -1,0 +1,209 @@
+[gd_scene load_steps=22 format=3 uid="uid://b8i40ar4ppfnk"]
+
+[ext_resource type="Script" uid="uid://by2l452usub17" path="res://script/camera_cursor.gd" id="1_da4s2"]
+[ext_resource type="Script" uid="uid://cdg5ebrvjsf7b" path="res://camera_2d.gd" id="2_46ojj"]
+[ext_resource type="Texture2D" uid="uid://bb7pe1ei7dtk7" path="res://animations/camera_open/camera_up_0.png" id="3_x2kx3"]
+[ext_resource type="Texture2D" uid="uid://duod7ub3g0no8" path="res://animations/camera_open/camera_up_1.png" id="4_p7vjx"]
+[ext_resource type="Texture2D" uid="uid://dk25lv6yd2f4j" path="res://animations/camera_open/camera_up_2.png" id="5_sjc2x"]
+[ext_resource type="Texture2D" uid="uid://ctsw6gbyt42nv" path="res://animations/camera_open/camera_up_3.png" id="6_v82ap"]
+[ext_resource type="Texture2D" uid="uid://duwmb4g1big5r" path="res://animations/camera_open/camera_up_4.png" id="7_rw1ws"]
+[ext_resource type="Texture2D" uid="uid://dgcdm4t28u83u" path="res://animations/camera_open/camera_up_5.png" id="8_u8bqb"]
+[ext_resource type="Texture2D" uid="uid://dwpfpbkauo3x2" path="res://animations/camera_open/camera_up_6.png" id="9_wxvfu"]
+[ext_resource type="Texture2D" uid="uid://bqd5jrthxof7h" path="res://animations/camera_borda_0.png" id="10_8kami"]
+[ext_resource type="Texture2D" uid="uid://c02jcooxa8drj" path="res://animations/camera_close/camera_dawn_2.png" id="11_da4s2"]
+[ext_resource type="Texture2D" uid="uid://ch0n5asbs3g7r" path="res://animations/camera_close/camera_dawn_3.png" id="12_i1roq"]
+[ext_resource type="Texture2D" uid="uid://2lopq5f78okc" path="res://animations/camera_effect/camera_up_effect_0.png" id="13_dn2ty"]
+[ext_resource type="Texture2D" uid="uid://bhfuhyt3g077y" path="res://animations/camera_effect/camera_up_effect_1.png" id="14_b3gec"]
+[ext_resource type="Texture2D" uid="uid://u4x8874ocymx" path="res://animations/camera_effect/camera_up_effect_2.png" id="15_ruwrj"]
+[ext_resource type="Texture2D" uid="uid://losi2lgkhrr4" path="res://animations/camera_effect/camera_up_effect_3.png" id="16_5fj6y"]
+
+[sub_resource type="Animation" id="Animation_da4s2"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("camera:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_u6scn"]
+resource_name = "close_camera"
+length = 0.6
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("7_rw1ws"), ExtResource("7_rw1ws"), ExtResource("11_da4s2"), ExtResource("12_i1roq"), ExtResource("12_i1roq"), null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, -0.99988), Vector2(0, -0.999878), Vector2(0, 249), Vector2(0, 454), Vector2(0, 454), Vector2(0, 454)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("camera:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594)]
+}
+
+[sub_resource type="Animation" id="Animation_jmvma"]
+resource_name = "glitch_camera"
+length = 0.5
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0666667, 0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_x2kx3"), ExtResource("13_dn2ty"), ExtResource("14_b3gec"), ExtResource("15_ruwrj"), ExtResource("16_5fj6y"), ExtResource("10_8kami")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.144, 0), Vector2(-1.144, 0), Vector2(-1.144, 0), Vector2(-1.144, 0), Vector2(-1.144, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("camera:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594)]
+}
+
+[sub_resource type="Animation" id="Animation_8kami"]
+resource_name = "open_camera"
+length = 0.7
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camera:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("3_x2kx3"), ExtResource("4_p7vjx"), ExtResource("5_sjc2x"), ExtResource("6_v82ap"), ExtResource("7_rw1ws"), ExtResource("8_u8bqb"), ExtResource("9_wxvfu"), ExtResource("10_8kami")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-1.14376, 577), Vector2(-1.14376, 454), Vector2(-1.14376, 250), Vector2(-1.14376, 109), Vector2(-1.14376, -3.80874e-05), Vector2(-1.14376, -3.80874e-05), Vector2(-1.14376, -3.80874e-05), Vector2(-1.14376, -3.80874e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("camera:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594), Vector2(0.88, 0.938594)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i1roq"]
+_data = {
+&"RESET": SubResource("Animation_da4s2"),
+&"close_camera": SubResource("Animation_u6scn"),
+&"glitch_camera": SubResource("Animation_jmvma"),
+&"open_camera": SubResource("Animation_8kami")
+}
+
+[node name="Camera_Monitor" type="Node2D"]
+script = ExtResource("1_da4s2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(687.686, 458.5)
+scale = Vector2(0.889974, 0.889974)
+script = ExtResource("2_46ojj")
+
+[node name="animation_camera_monitor" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i1roq")
+}
+speed_scale = 2.0
+
+[node name="camera" type="Sprite2D" parent="."]
+position = Vector2(-1.14376, -3.80874e-05)
+scale = Vector2(0.88, 0.938594)
+texture = ExtResource("10_8kami")
+centered = false

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqyus77udo73l"]
+
+[ext_resource type="Script" uid="uid://dxha7hdgp3cn6" path="res://script/room_cam_3.gd" id="1_gxwm3"]
+[ext_resource type="Texture2D" uid="uid://b8f8yv4gus8lr" path="res://textures/room_3/local_2_0.png" id="2_gxwm3"]
+[ext_resource type="Texture2D" uid="uid://dlx8yrctggxlr" path="res://textures/Sprite59_0.png" id="3_a2h4m"]
+[ext_resource type="Texture2D" uid="uid://csuwvm0aeimf7" path="res://textures/ui/Sprite_blue.png" id="5_5ilbx"]
+[ext_resource type="Texture2D" uid="uid://dqnsumqc6i3jn" path="res://textures/ui/Sprite41_0.png" id="6_ip453"]
+[ext_resource type="Texture2D" uid="uid://b4sqrgp72aa61" path="res://textures/ui/Sprite42_0.png" id="7_f7ftl"]
+
+[node name="room-cam-3" type="Sprite2D"]
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_gxwm3")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="room_3" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(859.982, 398.961)
+scale = Vector2(1.12185, 1.12185)
+texture = ExtResource("2_gxwm3")
+
+[node name="TachyonEye" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(669.949, 398.684)
+scale = Vector2(1.04257, 1.04257)
+texture = ExtResource("3_a2h4m")
+
+[node name="barr_value" type="Sprite2D" parent="."]
+position = Vector2(250.459, 646.632)
+scale = Vector2(5.40043, 0.605518)
+texture = ExtResource("5_5ilbx")
+
+[node name="tokaiteio_barr" type="Sprite2D" parent="."]
+position = Vector2(241.593, 582.926)
+texture = ExtResource("6_ip453")
+
+[node name="btn_estability" type="TextureButton" parent="."]
+offset_left = 439.965
+offset_top = 610.632
+offset_right = 680.965
+offset_bottom = 670.632
+texture_normal = ExtResource("7_f7ftl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="sound_room_karoke" type="AudioStreamPlayer" parent="."]

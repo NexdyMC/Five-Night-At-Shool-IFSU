@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5sh15qhdhc83"]
+
+[ext_resource type="Script" uid="uid://dp2vs1ar2s0bu" path="res://script/colldown.gd" id="1_qhogy"]
+[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="2_7r7p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r7p8"]
+size = Vector2(683.725, 1282.94)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qhogy")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(428, 343)
+scale = Vector2(0.463636, 0.463636)
+texture = ExtResource("2_7r7p8")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(212.451, 7.74512)
+shape = SubResource("RectangleShape2D_7r7p8")
+
+[node name="Time" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
