@@ -5,6 +5,8 @@ extends Control
 @onready var btn_new_game = $Panel/BtnNewGame
 @onready var btn_continue = $Panel/BtnContinue
 @onready var btn_exit = $Panel/BtnExit
+@onready var btn_credit = $PanelInfo/BtnCredit
+
 func _ready():
 	tekstur_horor.visible = false
 
@@ -47,7 +49,7 @@ func _on_btn_exit_mouse_exited() -> void:
 
 #Btn Credit Hover
 func _on_btn_credit_mouse_entered() -> void:
-	btn_exit.modulate = Color.from_string("cccccccc", Color.WHITE)
+	btn_credit.modulate = Color.from_string("cccccccc", Color.WHITE)
 func _on_btn_credit_mouse_exited() -> void:
-	btn_exit.modulate = Color.from_string("ffffffff", Color.WHITE)
+	btn_credit.modulate = Color.from_string("ffffffff", Color.WHITE)
 #endregion
