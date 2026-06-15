@@ -30,28 +30,54 @@ texture = ExtResource("2_w63ht")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Version" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 720.0
-offset_top = 640.0
-offset_right = 1055.0
-offset_bottom = 672.0
-texture = ExtResource("3_6glmg")
-expand_mode = 1
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TexTitle" type="TextureRect" parent="."]
+[node name="TexTitle" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0533333
 anchor_top = 0.0888889
 anchor_right = 0.293333
 anchor_bottom = 0.2375
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 61.8667
+offset_top = 60.4444
+offset_right = 380.267
+offset_bottom = 201.5
 texture = ExtResource("4_obptm")
 metadata/_edit_use_anchors_ = true
 
-[node name="Night" type="TextureRect" parent="."]
+[node name="BtnNewGame" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0533333
+anchor_top = 0.383333
+anchor_right = 0.176667
+anchor_bottom = 0.422222
+offset_left = 61.8667
+offset_top = 260.666
+offset_right = 204.934
+offset_bottom = 287.111
+texture_normal = ExtResource("5_pumq6")
+metadata/_edit_use_anchors_ = true
+
+[node name="BtnContinue" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0533333
+anchor_top = 0.444444
+anchor_right = 0.1625
+anchor_bottom = 0.488889
+offset_left = 61.8667
+offset_top = 302.222
+offset_right = 188.5
+offset_bottom = 328.977
+texture_normal = ExtResource("6_2k3nr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Night" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 328.0
@@ -60,52 +86,52 @@ offset_bottom = 347.0
 texture = ExtResource("5_w63ht")
 expand_mode = 1
 
-[node name="BtnNewGame" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0533333
-anchor_top = 0.383333
-anchor_right = 0.176667
-anchor_bottom = 0.422222
-texture_normal = ExtResource("5_pumq6")
-metadata/_edit_use_anchors_ = true
-
-[node name="BtnContinue" type="TextureButton" parent="."]
-modulate = Color(1, 1, 1, 0.729412)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0533333
-anchor_top = 0.444444
-anchor_right = 0.1625
-anchor_bottom = 0.488889
-offset_bottom = -3.05176e-05
-texture_normal = ExtResource("6_2k3nr")
-metadata/_edit_use_anchors_ = true
-
-[node name="BtnExit" type="TextureButton" parent="."]
+[node name="BtnExit" type="TextureButton" parent="Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0533333
 anchor_top = 0.511111
 anchor_right = 0.1025
 anchor_bottom = 0.55
-offset_top = -3.05176e-05
+offset_left = 61.8667
+offset_top = 347.555
+offset_right = 118.9
+offset_bottom = 374.467
 texture_normal = ExtResource("7_p57fc")
 metadata/_edit_use_anchors_ = true
 
-[node name="BtnCredit" type="TextureButton" parent="."]
+[node name="PanelInfo" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="BtnCredit" type="TextureButton" parent="PanelInfo"]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 596.0
-offset_right = 1053.0
-offset_bottom = 624.0
+offset_left = -160.0
+offset_top = -120.0
+offset_right = -67.0
+offset_bottom = -92.0
 texture_normal = ExtResource("8_tv5o4")
 
-[connection signal="mouse_entered" from="BtnNewGame" to="." method="_on_btn_new_game_mouse_entered"]
-[connection signal="mouse_exited" from="BtnNewGame" to="." method="_on_btn_new_game_mouse_exited"]
-[connection signal="pressed" from="BtnNewGame" to="." method="_on_btn_new_game_pressed"]
-[connection signal="mouse_entered" from="BtnContinue" to="." method="_on_btn_continue_mouse_entered"]
-[connection signal="mouse_exited" from="BtnContinue" to="." method="_on_btn_continue_mouse_exited"]
-[connection signal="pressed" from="BtnContinue" to="." method="_on_btn_continue_pressed"]
-[connection signal="pressed" from="BtnExit" to="." method="_on_btn_exit_pressed"]
-[connection signal="pressed" from="BtnCredit" to="." method="_on_btn_credit_pressed"]
+[node name="Version" type="TextureRect" parent="PanelInfo"]
+layout_mode = 0
+offset_left = -400.0
+offset_top = -76.0
+offset_right = -65.0
+offset_bottom = -44.0
+texture = ExtResource("3_6glmg")
+expand_mode = 1
+
+[connection signal="mouse_entered" from="Panel/BtnNewGame" to="." method="_on_btn_new_game_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/BtnNewGame" to="." method="_on_btn_new_game_mouse_exited"]
+[connection signal="pressed" from="Panel/BtnNewGame" to="." method="_on_btn_new_game_pressed"]
+[connection signal="mouse_entered" from="Panel/BtnContinue" to="." method="_on_btn_continue_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/BtnContinue" to="." method="_on_btn_continue_mouse_exited"]
+[connection signal="pressed" from="Panel/BtnContinue" to="." method="_on_btn_continue_pressed"]
+[connection signal="pressed" from="Panel/BtnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="PanelInfo/BtnCredit" to="." method="_on_btn_credit_pressed"]

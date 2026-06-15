@@ -1,9 +1,9 @@
 extends Control
 
 # Menghubungkan node Tekstur ke dalam script
-@onready var tekstur_horor = $Night
-@onready var btn_new_game = $BtnNewGame
-@onready var btn_continue = $BtnContinue
+@onready var tekstur_horor = $Panel/Night
+@onready var btn_new_game = $Panel/BtnNewGame
+@onready var btn_continue = $Panel/BtnContinue
 
 func _ready():
 	tekstur_horor.visible = false
@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_btn_new_game_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://main.tscn")
 
 
 func _on_btn_continue_pressed() -> void:
@@ -28,7 +28,7 @@ func _on_btn_exit_pressed() -> void:
 
 
 func _on_btn_credit_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://screen/creadit.tscn")
 
 # Mouse Hover
 func _on_btn_new_game_mouse_entered() -> void:
