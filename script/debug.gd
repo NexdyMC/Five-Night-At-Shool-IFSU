@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Arahkan ke Node Label milikmu
-@onready var label_debug : Label = $Label_Debug
+@onready var label_debug : Label = $LabelDebug
 
 func _ready() -> void:
 	 #Menu F3 selalu disembunyikan saat game baru mulai

@@ -1,23 +1,23 @@
 extends Node2D
 
 #region Variabel
-# monitor camera
+
+# Node Other
 @onready var object_monitor_panel: Panel = $MonitorCanvas/MonitorPanel
 @onready var object_mask_panel: TextureButton = $CanvasGroup/TextureButton
 @onready var vodka_step_5 : Sprite2D = $CanvasGroup/VoltarStep5
 @onready var suzuka_step_5 : Sprite2D = $CanvasGroup/SuzukaStep5
-
-@onready var timer_dadu : Timer = $time_charakter_state
+@onready var timer_dadu : Timer = $TimeCharakterState
 
 # sprite panel monitor
-@onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_1"
-@onready var object_cam2_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_2"
-@onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_3"
-@onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_4"
-@onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_5"
-@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/room_cam_6"
+@onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam1"
+@onready var object_cam2_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam2"
+@onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam3"
+@onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam4"
+@onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam5"
+@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam6"
 
-# map camera button $MonitorCanvas/
+# map camera button
 @onready var btn_cam1: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam1
 @onready var btn_cam2: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam2
 @onready var btn_cam3: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam3
@@ -26,11 +26,12 @@ extends Node2D
 @onready var btn_cam6: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam6
 
 # Audio
-@onready var audio_sound_mask : AudioStreamPlayer = $CanvasGroup/TextureButton/sound_mask
-@onready var audio_AudioCamera : AudioStreamPlayer2D = $AudioCamera
-@onready var anim_camera_monitor = $MonitorCanvas/anim_camera_monitor
-#@onready var anim_tachyon_jump = $anim_tachyon_jump
-@onready var anim_char_jump = $anim_char_jump
+@onready var audio_sound_mask : AudioStreamPlayer = $CanvasGroup/TextureButton/SoundMask
+@onready var audio_camera : AudioStreamPlayer = $MonitorCanvas/AudioCamera
+
+# Animasi 
+@onready var anim_camera_monitor : AnimationPlayer = $MonitorCanvas/AnimCameraMonitor
+@onready var anim_char_jump : AnimationPlayer = $AnimCharJump
 
 var sound_open_camera  = preload("res://sounds/camera/camera_close.wav")
 var sound_switch_camera  = preload("res://sounds/camera/camera_switch.wav")
@@ -62,7 +63,7 @@ func _ready() -> void:
 	
 	anim_camera_monitor.reset_section()
 	#anim_tachyon_jump.play("RESET")
-	anim_char_jump.play("RESET")
+	anim_char_jump.play("RESET") 
 	
 	Global.camera_room_id = 0 
 	vodka_step_5.visible = false
@@ -160,8 +161,8 @@ func open_camera(id_camera: int, description: String):
 	anim_camera_monitor.play("anim_camera_effect")
 	
 	# 1. Matikan semua kamera dulu agar bersih
-	audio_AudioCamera.stream = sound_switch_camera
-	audio_AudioCamera.play()
+	audio_camera.stream = sound_switch_camera
+	audio_camera.play()
 	
 	object_cam1_panel.visible = false 
 	object_cam2_panel.visible = false
@@ -178,8 +179,8 @@ func open_camera(id_camera: int, description: String):
 	btn_cam6.disabled = false
 	
 	await get_tree().create_timer(0.4).timeout
-	audio_AudioCamera.stream = sound_fan_camera
-	audio_AudioCamera.play()
+	audio_camera.stream = sound_fan_camera
+	audio_camera.play()
 
 	if id_camera == 0:
 		Global.camera_room_id = 0 
