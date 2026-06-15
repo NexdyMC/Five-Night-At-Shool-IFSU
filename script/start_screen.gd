@@ -2,6 +2,8 @@ extends Control
 
 # Menghubungkan node Tekstur ke dalam script
 @onready var tekstur_horor = $Night
+@onready var btn_new_game = $BtnNewGame
+@onready var btn_continue = $BtnContinue
 
 func _ready():
 	tekstur_horor.visible = false
@@ -38,7 +40,9 @@ func _on_btn_new_game_mouse_exited() -> void:
 
 func _on_btn_continue_mouse_entered() -> void:
 	tekstur_horor.visible = true
+	#btn_continue.modulate.a = 180
 
 
 func _on_btn_continue_mouse_exited() -> void:
 	tekstur_horor.visible = false
+	#btn_continue.modulate.a = 255
