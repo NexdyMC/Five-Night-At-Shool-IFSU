@@ -1,15 +1,15 @@
 extends Control
 
 # Menghubungkan node Tekstur ke dalam script
-@onready var tekstur_horor = $Panel/Night
+@onready var level_night = $Panel/LevelNight
 @onready var btn_new_game = $Panel/BtnNewGame
 @onready var btn_continue = $Panel/BtnContinue
 @onready var btn_exit = $Panel/BtnExit
 @onready var btn_credit = $PanelInfo/BtnCredit
 
 func _ready():
-	tekstur_horor.visible = false
-
+	level_night.visible = false
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,11 +22,14 @@ func _on_btn_new_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://main.tscn")
 func _on_btn_continue_pressed() -> void:
 	get_tree().change_scene_to_file("res://main.tscn")
+	Global.level_night = 1
+	
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()
 func _on_btn_credit_pressed() -> void:
 	get_tree().change_scene_to_file("res://screen/credit_screen.tscn")
 
+# Func Btn Hover and Normal
 func _btn_hover(btn_hover : TextureButton):
 	btn_hover.modulate = Color.from_string("aaaaaaaa", Color.WHITE)
 func _btn_normal(btn_normal : TextureButton):
@@ -40,10 +43,10 @@ func _on_btn_new_game_mouse_exited() -> void:
 
 # Btn Continue Hover
 func _on_btn_continue_mouse_entered() -> void:
-	tekstur_horor.visible = true
+	level_night.visible = true
 	_btn_hover(btn_continue)
 func _on_btn_continue_mouse_exited() -> void:
-	tekstur_horor.visible = false
+	level_night.visible = false
 	_btn_normal(btn_continue)
 
 # Btn Exit Hover

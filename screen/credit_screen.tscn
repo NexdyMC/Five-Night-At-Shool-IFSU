@@ -71,7 +71,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("5_2o8qe")
 
-[node name="Label" type="Label" parent="."]
+[node name="TimInfo" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -79,13 +79,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -336.0
-offset_top = -168.0
+offset_top = -208.0
 offset_right = 336.0
-offset_bottom = -145.0
+offset_bottom = -185.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_hahlh")
-text = "Admin ketua"
 horizontal_alignment = 1
 
 [node name="BtnBack" type="TextureButton" parent="."]

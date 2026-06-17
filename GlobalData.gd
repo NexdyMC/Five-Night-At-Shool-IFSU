@@ -9,9 +9,8 @@ var sisa_baterai: int = 100
 var jam_sekarang: int = 12
 var light : int = 0
 var stability : float = 100.0
-var night : int = 1
+var level_night : int = 1
 
-#malam 1 - 6
 # ==========================================
 # LEVEL KARAKTER (NIGHT 1 DEFAULT)
 # ==========================================
@@ -21,7 +20,8 @@ var VodkaC_level : int = 1
 var Cafe_level : int = 1
 var GoldS_level : int = 1
 
-var ship_state : int = 0	# 0 - 6 
+
+var ship_state : int = 0    	# 0 - 6 
 var voltar_state : int = 0  	# 0 - 3
 var suzuka_state : int = 0  	# 0 - 3 
 

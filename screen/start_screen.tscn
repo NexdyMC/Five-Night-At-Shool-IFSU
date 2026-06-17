@@ -77,7 +77,7 @@ offset_bottom = 328.977
 texture_normal = ExtResource("6_2k3nr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Night" type="TextureRect" parent="Panel"]
+[node name="LevelNight" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 328.0
