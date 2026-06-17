@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qrgyy4n3k4k6"
-path="res://.godot/imported/btn_cam2.png-adccc4729a254e81440e09f5120088da.ctex"
+uid="uid://ssjitcu8spr5"
+path="res://.godot/imported/red_sprite.png-6b5cb48f9753e67890c6843eec3111b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ui/btn_cam2.png"
-dest_files=["res://.godot/imported/btn_cam2.png-adccc4729a254e81440e09f5120088da.ctex"]
+source_file="res://textures/ui/red_sprite.png"
+dest_files=["res://.godot/imported/red_sprite.png-6b5cb48f9753e67890c6843eec3111b7.ctex"]
 
 [params]
 

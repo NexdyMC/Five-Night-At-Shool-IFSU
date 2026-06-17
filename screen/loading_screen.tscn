@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmarefyi1fysl"]
+[gd_scene load_steps=4 format=3 uid="uid://dmarefyi1fysl"]
 
 [ext_resource type="Script" uid="uid://sg754eclfa8j" path="res://script/loading_screen.gd" id="1_kgmty"]
+[ext_resource type="Texture2D" uid="uid://bbmbboia1lejc" path="res://textures/text/loading.png" id="2_xlv28"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kgmty"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,22 +14,44 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kgmty")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ProgressLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_kgmty")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -72.0
+offset_right = -200.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TxLoading" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -74.0
+offset_right = -48.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_xlv28")

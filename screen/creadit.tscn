@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2iivejmdpfp6"]
+[gd_scene load_steps=2 format=3 uid="uid://2iivejmdpfp6"]
 
-[ext_resource type="Texture2D" uid="uid://bmlou8vqrbu1v" path="res://textures/menu_screne.png" id="1_71uhq"]
-[ext_resource type="Script" uid="uid://8d147o4is5yy" path="res://script/creadit.gd" id="1_h2osw"]
+[ext_resource type="Texture2D" uid="uid://bcbqh1jr4n4l0" path="res://textures/menu_screne.png" id="1_71uhq"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_h2osw")
 
 [node name="ChatGptImageJun9,2026,072641Am2" type="Sprite2D" parent="."]
 position = Vector2(606, 274)

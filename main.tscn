@@ -1,19 +1,18 @@
-[gd_scene load_steps=91 format=3 uid="uid://gvjh8mhs53bb"]
+[gd_scene load_steps=92 format=3 uid="uid://gvjh8mhs53bb"]
 
 [ext_resource type="Script" uid="uid://dj7kshfwbkygr" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://ckf61fourcvtg" path="res://textures/scurity.png" id="2_getpj"]
 [ext_resource type="PackedScene" uid="uid://bh7k3qa8u3tf1" path="res://screen/room-cam-1.tscn" id="3_4c57u"]
-[ext_resource type="PackedScene" uid="uid://cyr2unodo0hs2" path="res://glitch.tscn" id="3_82xsv"]
 [ext_resource type="PackedScene" uid="uid://dgboqy1ssjwta" path="res://screen/room-cam-2.tscn" id="4_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dqyus77udo73l" path="res://screen/room-cam-3.tscn" id="5_4c57u"]
 [ext_resource type="PackedScene" uid="uid://by4b2g3x5bxkw" path="res://screen/room-cam-4.tscn" id="6_kek77"]
-[ext_resource type="Texture2D" uid="uid://cub5ksc8ghm1f" path="res://textures/ui/btn_CAM1.png" id="8_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cub5ksc8ghm1f" path="res://textures/ui/btn_cam1.png" id="8_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b2hwmxl3ll17m" path="res://screen/room-cam-5.tscn" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="9_4c57u"]
 [ext_resource type="Texture2D" uid="uid://b4bm1nhcf60j6" path="res://textures/ui/local_map.png" id="9_come4"]
-[ext_resource type="Texture2D" uid="uid://con0xix2tom58" path="res://textures/ui/btn_CAM1_active.png" id="9_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://qrgyy4n3k4k6" path="res://textures/ui/btn_CAM2.png" id="10_cegan"]
-[ext_resource type="Texture2D" uid="uid://cra2n7yk8pdtt" path="res://textures/ui/btn_CAM2_active.png" id="11_82xsv"]
+[ext_resource type="Texture2D" uid="uid://con0xix2tom58" path="res://textures/ui/btn_cam1_active.png" id="9_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://qrgyy4n3k4k6" path="res://textures/ui/btn_cam2.png" id="10_cegan"]
+[ext_resource type="Texture2D" uid="uid://cra2n7yk8pdtt" path="res://textures/ui/btn_cam2_active.png" id="11_82xsv"]
 [ext_resource type="Texture2D" uid="uid://g8rbph2gjixb" path="res://textures/ui/btn_cam3.png" id="12_getpj"]
 [ext_resource type="PackedScene" uid="uid://dwdf0uhckmyfq" path="res://screen/room-cam-6.tscn" id="12_swlj1"]
 [ext_resource type="Texture2D" uid="uid://bka10fa5lk3sn" path="res://textures/ui/btn_cam3_active.png" id="13_ryguw"]
@@ -25,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://bqd5jrthxof7h" path="res://animations/camera_borda_0.png" id="20_ryguw"]
 [ext_resource type="Texture2D" uid="uid://b0tgq60w0ece7" path="res://textures/ui/mask_on.png" id="22_ryguw"]
 [ext_resource type="Texture2D" uid="uid://dimgf8rbjorqf" path="res://textures/ui/mask_0.png" id="23_d13ii"]
+[ext_resource type="Texture2D" uid="uid://bplv53q324084" path="res://textures/ui/btn_cam6.png" id="24_1vm84"]
 [ext_resource type="Texture2D" uid="uid://bb7pe1ei7dtk7" path="res://animations/camera_open/camera_up_0.png" id="25_kkkcx"]
+[ext_resource type="Texture2D" uid="uid://5p3gy0wrsul5" path="res://textures/ui/btn_cam6_active.png" id="25_wu3dr"]
 [ext_resource type="Texture2D" uid="uid://duod7ub3g0no8" path="res://animations/camera_open/camera_up_1.png" id="26_34ol3"]
 [ext_resource type="Texture2D" uid="uid://dk25lv6yd2f4j" path="res://animations/camera_open/camera_up_2.png" id="27_c2n8d"]
 [ext_resource type="Texture2D" uid="uid://ctsw6gbyt42nv" path="res://animations/camera_open/camera_up_3.png" id="28_wy5fy"]
@@ -546,10 +547,6 @@ visible = false
 position = Vector2(-5.99799, 61.0016)
 scale = Vector2(0.9, 0.895)
 
-[node name="glitch" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("3_82xsv")]
-visible = false
-scale = Vector2(2, 2)
-
 [node name="MapRoom" type="Sprite2D" parent="MonitorCanvas/MonitorPanel"]
 position = Vector2(944.522, 504.592)
 scale = Vector2(0.75542, 0.75542)
@@ -644,10 +641,10 @@ offset_bottom = -136.558
 scale = Vector2(0.6, 0.6)
 shortcut = SubResource("Shortcut_yysqy")
 shortcut_in_tooltip = false
-texture_normal = ExtResource("16_0odxb")
-texture_pressed = ExtResource("16_0odxb")
-texture_hover = ExtResource("16_0odxb")
-texture_disabled = ExtResource("17_lswn8")
+texture_normal = ExtResource("24_1vm84")
+texture_pressed = ExtResource("24_1vm84")
+texture_hover = ExtResource("24_1vm84")
+texture_disabled = ExtResource("25_wu3dr")
 ignore_texture_size = true
 stretch_mode = 5
 

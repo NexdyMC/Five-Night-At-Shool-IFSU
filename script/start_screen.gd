@@ -25,31 +25,36 @@ func _on_btn_continue_pressed() -> void:
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()
 func _on_btn_credit_pressed() -> void:
-	get_tree().change_scene_to_file("res://screen/creadit.tscn")
+	get_tree().change_scene_to_file("res://screen/credit_screen.tscn")
 
+func _btn_hover(btn_hover : TextureButton):
+	btn_hover.modulate = Color.from_string("aaaaaaaa", Color.WHITE)
+func _btn_normal(btn_normal : TextureButton):
+	btn_normal.modulate = Color.from_string("ffffffff", Color.WHITE)
+	
 # Btn New Game Hover
 func _on_btn_new_game_mouse_entered() -> void:
-	btn_new_game.modulate = Color.from_string("cccccccc", Color.WHITE)
+	_btn_hover(btn_new_game)
 func _on_btn_new_game_mouse_exited() -> void:
-	btn_new_game.modulate = Color.from_string("ffffffff", Color.WHITE)
+	_btn_normal(btn_new_game)
 
 # Btn Continue Hover
 func _on_btn_continue_mouse_entered() -> void:
 	tekstur_horor.visible = true
-	btn_continue.modulate = Color.from_string("cccccccc", Color.WHITE)
+	_btn_hover(btn_continue)
 func _on_btn_continue_mouse_exited() -> void:
 	tekstur_horor.visible = false
-	btn_continue.modulate = Color.from_string("ffffffff", Color.WHITE)
+	_btn_normal(btn_continue)
 
 # Btn Exit Hover
 func _on_btn_exit_mouse_entered() -> void:
-	btn_exit.modulate = Color.from_string("cccccccc", Color.WHITE)
+	_btn_hover(btn_exit)
 func _on_btn_exit_mouse_exited() -> void:
-	btn_exit.modulate = Color.from_string("ffffffff", Color.WHITE)
+	_btn_normal(btn_exit)
 
 #Btn Credit Hover
 func _on_btn_credit_mouse_entered() -> void:
-	btn_credit.modulate = Color.from_string("cccccccc", Color.WHITE)
+	_btn_hover(btn_credit)
 func _on_btn_credit_mouse_exited() -> void:
-	btn_credit.modulate = Color.from_string("ffffffff", Color.WHITE)
+	_btn_normal(btn_credit)
 #endregion

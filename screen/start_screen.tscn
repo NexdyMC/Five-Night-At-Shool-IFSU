@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://baewynqoypk74" path="res://script/start_screen.gd" id="1_6b0qw"]
 [ext_resource type="Texture2D" uid="uid://bg45xnla0en4e" path="res://textures/main_screen.png" id="2_w63ht"]
-[ext_resource type="Texture2D" uid="uid://c3qdijk80wcat" path="res://textures/ui/version.png" id="3_6glmg"]
+[ext_resource type="Texture2D" uid="uid://c3qdijk80wcat" path="res://textures/text/version.png" id="3_6glmg"]
 [ext_resource type="Texture2D" uid="uid://s0fnocuufqg5" path="res://textures/title.png" id="4_obptm"]
-[ext_resource type="Texture2D" uid="uid://cbqxn0w3ltspy" path="res://textures/ui/new_game.png" id="5_pumq6"]
-[ext_resource type="Texture2D" uid="uid://bnb7t2xyntmtw" path="res://textures/ui/night_1.png" id="5_w63ht"]
-[ext_resource type="Texture2D" uid="uid://do50ad7lvkhv0" path="res://textures/ui/continue.png" id="6_2k3nr"]
-[ext_resource type="Texture2D" uid="uid://3b7gsegha1mp" path="res://textures/ui/exit.png" id="7_p57fc"]
-[ext_resource type="Texture2D" uid="uid://o5pq21383ndx" path="res://textures/ui/credit.png" id="8_tv5o4"]
+[ext_resource type="Texture2D" uid="uid://cbqxn0w3ltspy" path="res://textures/text/new_game.png" id="5_pumq6"]
+[ext_resource type="Texture2D" uid="uid://bnb7t2xyntmtw" path="res://textures/text/night_1.png" id="5_w63ht"]
+[ext_resource type="Texture2D" uid="uid://do50ad7lvkhv0" path="res://textures/text/continue.png" id="6_2k3nr"]
+[ext_resource type="Texture2D" uid="uid://3b7gsegha1mp" path="res://textures/text/exit.png" id="7_p57fc"]
+[ext_resource type="Texture2D" uid="uid://o5pq21383ndx" path="res://textures/text/credit.png" id="8_tv5o4"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -81,7 +81,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = 232.0
 offset_top = 328.0
-offset_right = 295.0
+offset_right = 296.0
 offset_bottom = 347.0
 texture = ExtResource("5_w63ht")
 expand_mode = 1

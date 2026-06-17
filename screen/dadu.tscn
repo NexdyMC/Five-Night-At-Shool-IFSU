@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpb5dn8seqf4r"]
 
-[ext_resource type="Script" uid="uid://drf120cw80g23" path="res://dadu.gd" id="1_pjpox"]
+[ext_resource type="Script" uid="uid://drf120cw80g23" path="res://script/dadu.gd" id="1_pjpox"]
 [ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="2_xflkb"]
 [ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="3_vtxbs"]
 [ext_resource type="Texture2D" uid="uid://d38lwuv6hsx37" path="res://textures/charakter/Yuuka.png" id="4_31trw"]

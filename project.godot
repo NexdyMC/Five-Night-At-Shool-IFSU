@@ -15,6 +15,10 @@ run/main_scene="uid://gvjh8mhs53bb"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Global="*res://GlobalData.gd"

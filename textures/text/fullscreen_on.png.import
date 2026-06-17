@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qrgyy4n3k4k6"
-path="res://.godot/imported/btn_cam2.png-adccc4729a254e81440e09f5120088da.ctex"
+uid="uid://c4efm6wcun3jy"
+path="res://.godot/imported/fullscreen_on.png-84a1bba27ed8abea13c45038ae6f32d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ui/btn_cam2.png"
-dest_files=["res://.godot/imported/btn_cam2.png-adccc4729a254e81440e09f5120088da.ctex"]
+source_file="res://textures/text/fullscreen_on.png"
+dest_files=["res://.godot/imported/fullscreen_on.png-84a1bba27ed8abea13c45038ae6f32d9.ctex"]
 
 [params]
 

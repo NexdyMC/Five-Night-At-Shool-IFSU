@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvda7m2u34mw2"
-path="res://.godot/imported/night_3.png-59814e9e5229a1f2c434f952a0cf2deb.ctex"
+uid="uid://c3qdijk80wcat"
+path="res://.godot/imported/version.png-d03cc4ba7c0227159a8f7f1ab65e365c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ui/night_3.png"
-dest_files=["res://.godot/imported/night_3.png-59814e9e5229a1f2c434f952a0cf2deb.ctex"]
+source_file="res://textures/text/version.png"
+dest_files=["res://.godot/imported/version.png-d03cc4ba7c0227159a8f7f1ab65e365c.ctex"]
 
 [params]
 
