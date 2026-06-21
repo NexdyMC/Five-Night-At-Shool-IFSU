@@ -20,7 +20,10 @@ offset_bottom = 431.82
 texture = ExtResource("2_8x80m")
 metadata/_edit_use_anchors_ = true
 
-[node name="Momoi_1" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(720.227, 194.353)
-scale = Vector2(0.318509, 0.336456)
+[node name="Raka_1" type="TextureRect" parent="CanvasGroup"]
+offset_left = 502.659
+offset_top = -83.0254
+offset_right = 855.659
+offset_bottom = 399.975
 texture = ExtResource("3_v7863")
+expand_mode = 1

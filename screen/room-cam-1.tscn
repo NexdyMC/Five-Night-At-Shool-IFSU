@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dj5w77qipukp4" path="res://script/room_cam_1.gd" id="1_mxfea"]
 [ext_resource type="Texture2D" uid="uid://c6rbqxojgtdw8" path="res://textures/room_1/room_1_0.png" id="2_nlq54"]
-[ext_resource type="Texture2D" uid="uid://8ou4n6yoal38" path="res://textures/charakter/Midori.png" id="3_785q5"]
+[ext_resource type="Texture2D" uid="uid://dls41q7545hm7" path="res://textures/charakter/raka_1.png" id="3_785q5"]
 
 [node name="room-cam-1" type="Sprite2D"]
 scale = Vector2(1.05, 1.05)
@@ -24,14 +24,20 @@ offset_bottom = 384.126
 texture = ExtResource("2_nlq54")
 metadata/_edit_use_anchors_ = true
 
-[node name="Midori_1" type="Sprite2D" parent="CanvasGroup"]
-visible = false
-position = Vector2(743.092, 116.989)
-scale = Vector2(0.286361, 0.302497)
+[node name="Raka_1" type="TextureRect" parent="CanvasGroup"]
+offset_left = 543.029
+offset_top = -79.2515
+offset_right = 1823.03
+offset_bottom = 641.748
+scale = Vector2(0.4603, 0.486237)
 texture = ExtResource("3_785q5")
+metadata/_edit_use_anchors_ = true
 
-[node name="Midori_2" type="Sprite2D" parent="CanvasGroup"]
-visible = false
-position = Vector2(1095.88, 283.983)
-scale = Vector2(0.508778, 0.537447)
+[node name="Raka_2" type="TextureRect" parent="CanvasGroup"]
+offset_left = 564.464
+offset_top = -101.895
+offset_right = 1844.46
+offset_bottom = 619.105
+scale = Vector2(0.691668, 0.730643)
 texture = ExtResource("3_785q5")
+metadata/_edit_use_anchors_ = true
