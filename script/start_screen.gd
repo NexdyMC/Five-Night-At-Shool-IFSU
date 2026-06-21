@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 #region Function Button
 
 func _on_btn_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://screen/loading_screen.tscn")
 func _on_btn_continue_pressed() -> void:
 	get_tree().change_scene_to_file("res://main.tscn")
 	Global.level_night = 1

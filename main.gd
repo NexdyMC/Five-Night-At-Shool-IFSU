@@ -5,9 +5,10 @@ extends Node2D
 # Node Other
 @onready var object_monitor_panel: Panel = $MonitorCanvas/MonitorPanel
 @onready var object_mask_panel: TextureButton = $CanvasGroup/TextureButton
-@onready var vodka_step_5 : Sprite2D = $CanvasGroup/VoltarStep5
+@onready var vodka_step_5 : Sprite2D = $CanvasGroup/Raka_5
 @onready var suzuka_step_5 : Sprite2D = $CanvasGroup/SuzukaStep5
 @onready var timer_dadu : Timer = $TimeCharakterState
+@onready var object_mask_on: TextureRect = $CanvasGroup/MaskOn
 
 # sprite panel monitor
 @onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam1"
@@ -26,7 +27,7 @@ extends Node2D
 @onready var btn_cam6: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam6
 
 # Audio
-@onready var audio_sound_mask : AudioStreamPlayer = $CanvasGroup/TextureButton/SoundMask
+@onready var audio_sound_mask : AudioStreamPlayer = $CanvasGroup/TextureButton/AudioMask
 @onready var audio_camera : AudioStreamPlayer = $MonitorCanvas/AudioCamera
 
 # Animasi 
@@ -150,12 +151,26 @@ func _cek_entity_() -> void:
 	else:
 		suzuka_step_5.visible = false
 	
-	if Global.voltar_state >= 6:
+	if Global.voltar_state == 6 and Global.is_mask_on == true:
 		Global.voltar_state = 0
-	if Global.suzuka_state >= 7:
+	elif Global.voltar_state == 6 and Global.is_mask_on == false:
+		Global.GameOverId = 1
+		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		print("gameover")
+		
+	if Global.suzuka_state >= 7 and Global.is_mask_on == true:
 		Global.suzuka_state = 0
-	if Global.ship_state >= 6:
+	elif Global.suzuka_state == 7 and  Global.is_mask_on == false:
+		Global.GameOverId = 2
+		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		print("gameover")
+		
+	if Global.ship_state >= 6 and Global.is_mask_on == true:
 		Global.ship_state = 0
+	elif Global.suzuka_state == 6 and  Global.is_mask_on == false:
+		Global.GameOverId = 3
+		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		print("gameover")
 		
 func open_camera(id_camera: int, description: String):
 	anim_camera_monitor.play("anim_camera_effect")
@@ -231,14 +246,16 @@ func _on_mask_pressed() -> void:
 #	Pakai Masker : true
 	if Global.is_mask_on == false:
 		Global.is_mask_on = true
-		object_mask_panel.visible = true
+		#object_mask_panel.visible = true
+		object_mask_on.visible = true
 		audio_sound_mask.stream = sound_mask_on
 		audio_sound_mask.play()
 		print("masker dipake : " + str(Global.is_mask_on))
 #	Pakai Masker : false
 	elif Global.is_mask_on == true:
 		Global.is_mask_on = false
-		object_mask_panel.visible = false
+		#object_mask_panel.visible = false
+		object_mask_on.visible = false
 		audio_sound_mask.stream = sound_mask_off
 		audio_sound_mask.play()
 		print("masker dipake: ", Global.is_mask_on)

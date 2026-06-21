@@ -10,6 +10,7 @@ var jam_sekarang: int = 12
 var light : int = 0
 var stability : float = 100.0
 var level_night : int = 1
+var GameOverId : int = 0
 
 # ==========================================
 # LEVEL KARAKTER (NIGHT 1 DEFAULT)

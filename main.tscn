@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://gvjh8mhs53bb"]
+[gd_scene load_steps=88 format=3 uid="uid://gvjh8mhs53bb"]
 
 [ext_resource type="Script" uid="uid://dj7kshfwbkygr" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://ckf61fourcvtg" path="res://textures/scurity.png" id="2_getpj"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dwdf0uhckmyfq" path="res://screen/room-cam-6.tscn" id="12_swlj1"]
 [ext_resource type="Texture2D" uid="uid://bka10fa5lk3sn" path="res://textures/ui/btn_cam3_active.png" id="13_ryguw"]
 [ext_resource type="Texture2D" uid="uid://86h428so6y3" path="res://textures/ui/btn_cam4.png" id="14_d13ii"]
-[ext_resource type="Texture2D" uid="uid://dja8g28jrvtep" path="res://textures/ui/RecIndicator.png" id="14_rqtf5"]
 [ext_resource type="Texture2D" uid="uid://cf23k1d5dmv04" path="res://textures/ui/btn_cam4_active.png" id="15_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://bk3nli8i1aut6" path="res://textures/ui/btn_cam5.png" id="16_0odxb"]
 [ext_resource type="Texture2D" uid="uid://bro0ct4i23gtr" path="res://textures/ui/btn_cam5_active.png" id="17_lswn8"]
@@ -418,43 +417,6 @@ _data = {
 &"susto_jump": SubResource("Animation_0arob")
 }
 
-[sub_resource type="Animation" id="Animation_cyx1q"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_1vm84"]
-resource_name = "anim_kedip_redindicator"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dhbp"]
-_data = {
-&"RESET": SubResource("Animation_cyx1q"),
-&"anim_kedip_redindicator": SubResource("Animation_1vm84")
-}
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
 
@@ -474,27 +436,29 @@ position = Vector2(1272, 504)
 scale = Vector2(0.161497, 0.161497)
 texture = ExtResource("38_come4")
 
-[node name="VoltarStep5" type="Sprite2D" parent="CanvasGroup"]
+[node name="Raka_5" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(507, 411)
 scale = Vector2(0.358625, 0.358625)
 texture = ExtResource("4_1vm84")
 
+[node name="MaskOn" type="TextureRect" parent="CanvasGroup"]
+visible = false
+offset_top = 8.0
+offset_right = 1213.0
+offset_bottom = 736.0
+texture = ExtResource("23_d13ii")
+expand_mode = 1
+
 [node name="TextureButton" type="TextureButton" parent="CanvasGroup"]
-offset_left = 237.0
-offset_top = 470.0
+offset_left = 145.0
+offset_top = 400.0
 offset_right = 562.0
 offset_bottom = 717.0
 texture_normal = ExtResource("22_ryguw")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="sound_mask" type="AudioStreamPlayer" parent="CanvasGroup/TextureButton"]
-
-[node name="mask" type="Sprite2D" parent="CanvasGroup/TextureButton/sound_mask"]
-visible = false
-position = Vector2(605, 369)
-scale = Vector2(0.806667, 0.806667)
-texture = ExtResource("23_d13ii")
+[node name="AudioMask" type="AudioStreamPlayer" parent="CanvasGroup/TextureButton"]
 
 [node name="MonitorCanvas" type="CanvasLayer" parent="."]
 
@@ -648,23 +612,23 @@ texture_disabled = ExtResource("25_wu3dr")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="AnimCamera" type="TextureRect" parent="MonitorCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
 [node name="AnimCameraMonitor" type="AnimationPlayer" parent="MonitorCanvas"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_cyx1q")
 }
 
-[node name="AnimCamera" type="TextureRect" parent="MonitorCanvas"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 584.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-
 [node name="AudioCamera" type="AudioStreamPlayer" parent="MonitorCanvas"]
-stream = ExtResource("33_swlj1")
+stream = ExtResource("32_23xmf")
 
 [node name="debug" type="CanvasLayer" parent="."]
 layer = 99
@@ -684,25 +648,12 @@ libraries = {
 speed_scale = 2.0
 
 [node name="CharakterJump" type="Sprite2D" parent="AnimCharJump"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(640, 360)
 scale = Vector2(0.9375, 0.9375)
 
 [node name="SoundCharakterJump" type="AudioStreamPlayer" parent="AnimCharJump"]
 stream = ExtResource("84_ppx11")
-
-[node name="RedIndicator" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0)
-offset_left = 74.002
-offset_top = 85.0016
-offset_right = 138.002
-offset_bottom = 133.002
-texture = ExtResource("14_rqtf5")
-expand_mode = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RedIndicator"]
-libraries = {
-&"": SubResource("AnimationLibrary_0dhbp")
-}
 
 [node name="TimeCharakterState" type="Timer" parent="."]
 

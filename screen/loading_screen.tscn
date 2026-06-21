@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmarefyi1fysl"]
+[gd_scene load_steps=5 format=3 uid="uid://dmarefyi1fysl"]
 
 [ext_resource type="Script" uid="uid://sg754eclfa8j" path="res://script/loading_screen.gd" id="1_kgmty"]
 [ext_resource type="Texture2D" uid="uid://bbmbboia1lejc" path="res://textures/text/loading.png" id="2_xlv28"]
+[ext_resource type="FontFile" uid="uid://b86pjl64766w4" path="res://fonts/MonomaniacOne-Regular.ttf" id="3_c0da3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kgmty"]
 
@@ -21,25 +22,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 8.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_kgmty")
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -72.0
-offset_right = -200.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
 
 [node name="TxLoading" type="TextureRect" parent="."]
 layout_mode = 1
@@ -55,3 +40,20 @@ offset_bottom = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_xlv28")
+
+[node name="ProgressLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -88.0
+offset_right = -199.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_c0da3")
+theme_override_font_sizes/font_size = 32
+text = "0%"

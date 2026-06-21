@@ -21,9 +21,9 @@ texture = ExtResource("2_8x80m")
 metadata/_edit_use_anchors_ = true
 
 [node name="Raka_1" type="TextureRect" parent="CanvasGroup"]
-offset_left = 502.659
-offset_top = -83.0254
-offset_right = 855.659
-offset_bottom = 399.975
+offset_left = 562.678
+offset_top = 4.15077
+offset_right = 832.678
+offset_bottom = 374.151
 texture = ExtResource("3_v7863")
 expand_mode = 1

@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bg3jkkwaiw3xa" path="res://textures/ui/gameover.png" id="1_jxlm5"]
 [ext_resource type="FontFile" uid="uid://geg3ni3chq6o" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="3_0285d"]
 
+[sub_resource type="Animation" id="Animation_7hun0"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_jxlm5"]
 resource_name = "anim_gameover"
 length = 10.0
@@ -30,33 +33,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7hun0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../BgRed:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0285d"]

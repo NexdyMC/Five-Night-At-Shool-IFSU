@@ -43,7 +43,7 @@ func _update_layar_debug() -> void:
 	teks += "Mask : " + str(Global.is_mask_on) + "\n"
 	teks += "Kamera ID Aktif: " + str(Global.camera_room_id) + "\n"
 	teks += "Stability: " + str(Global.stability) + "\n"
-	teks += "Night: " + str(Global.night) + "\n"
+	teks += "Night: " + str(Global.level_night) + "\n"
 	
 	teks += "--------------- [Entity] --------------- \n"
 	teks += "State Voltar: " + str(Global.voltar_state) + "\n"
