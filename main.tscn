@@ -2,19 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dj7kshfwbkygr" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dmdx5v0odmur8" path="res://textures/room_scurity/room_scurity.png" id="2_rqtf5"]
-[ext_resource type="PackedScene" uid="uid://bh7k3qa8u3tf1" path="res://screen/room-cam-1.tscn" id="3_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bh7k3qa8u3tf1" path="res://screen/room_cam_1.tscn" id="3_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dfsq7egw4j02g" path="res://textures/charakter/aldian_1.png" id="3_rqtf5"]
 [ext_resource type="Texture2D" uid="uid://bify5qmjmdpux" path="res://textures/charakter/raka_2_1.png" id="4_1vm84"]
-[ext_resource type="PackedScene" uid="uid://dgboqy1ssjwta" path="res://screen/room-cam-2.tscn" id="4_efxa6"]
-[ext_resource type="PackedScene" uid="uid://dqyus77udo73l" path="res://screen/room-cam-3.tscn" id="5_4c57u"]
-[ext_resource type="PackedScene" uid="uid://by4b2g3x5bxkw" path="res://screen/room-cam-4.tscn" id="6_kek77"]
+[ext_resource type="PackedScene" uid="uid://dgboqy1ssjwta" path="res://screen/room_cam_2.tscn" id="4_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dqyus77udo73l" path="res://screen/room_cam_3.tscn" id="5_4c57u"]
+[ext_resource type="PackedScene" uid="uid://by4b2g3x5bxkw" path="res://screen/room_cam_4.tscn" id="6_kek77"]
 [ext_resource type="Texture2D" uid="uid://cub5ksc8ghm1f" path="res://textures/ui/btn_CAM1.png" id="8_dg77c"]
-[ext_resource type="PackedScene" uid="uid://b2hwmxl3ll17m" path="res://screen/room-cam-5.tscn" id="8_efxa6"]
+[ext_resource type="PackedScene" uid="uid://b2hwmxl3ll17m" path="res://screen/room_cam_5.tscn" id="8_efxa6"]
 [ext_resource type="Texture2D" uid="uid://b4bm1nhcf60j6" path="res://textures/ui/local_map.png" id="9_come4"]
 [ext_resource type="Texture2D" uid="uid://con0xix2tom58" path="res://textures/ui/btn_CAM1_active.png" id="9_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://qrgyy4n3k4k6" path="res://textures/ui/btn_CAM2.png" id="10_cegan"]
 [ext_resource type="Texture2D" uid="uid://cra2n7yk8pdtt" path="res://textures/ui/btn_CAM2_active.png" id="11_82xsv"]
 [ext_resource type="Texture2D" uid="uid://g8rbph2gjixb" path="res://textures/ui/btn_cam3.png" id="12_getpj"]
-[ext_resource type="PackedScene" uid="uid://dwdf0uhckmyfq" path="res://screen/room-cam-6.tscn" id="12_swlj1"]
+[ext_resource type="PackedScene" uid="uid://dwdf0uhckmyfq" path="res://screen/room_cam_6.tscn" id="12_swlj1"]
 [ext_resource type="Texture2D" uid="uid://bka10fa5lk3sn" path="res://textures/ui/btn_cam3_active.png" id="13_ryguw"]
 [ext_resource type="Texture2D" uid="uid://86h428so6y3" path="res://textures/ui/btn_cam4.png" id="14_d13ii"]
 [ext_resource type="Texture2D" uid="uid://cf23k1d5dmv04" path="res://textures/ui/btn_cam4_active.png" id="15_1u8w0"]
@@ -40,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://losi2lgkhrr4" path="res://animations/camera_effect/camera_up_effect_3.png" id="35_ovcoh"]
 [ext_resource type="Texture2D" uid="uid://bkvhalov3bowg" path="res://animations/camera_close/camera_dawn_0.png" id="36_1yv1y"]
 [ext_resource type="Texture2D" uid="uid://baxggaojlewcl" path="res://animations/camera_close/camera_dawn_1.png" id="37_5yh34"]
-[ext_resource type="Texture2D" uid="uid://cmaa4euyw0paw" path="res://textures/charakter/Momoi_battle.png" id="38_come4"]
 [ext_resource type="Texture2D" uid="uid://c02jcooxa8drj" path="res://animations/camera_close/camera_dawn_2.png" id="38_pjuso"]
 [ext_resource type="AudioStream" uid="uid://dilsrbq7fek7i" path="res://sounds/camera/camera_switch.wav" id="38_yysqy"]
 [ext_resource type="Texture2D" uid="uid://ch0n5asbs3g7r" path="res://animations/camera_close/camera_dawn_3.png" id="39_23xmf"]
@@ -455,9 +455,9 @@ expand_mode = 1
 [node name="OfficeSprite" type="Sprite2D" parent="CanvasGroup" unique_id=1365334154]
 
 [node name="SuzukaStep5" type="Sprite2D" parent="CanvasGroup" unique_id=1232146082]
-position = Vector2(951.0001, 386.99997)
-scale = Vector2(0.161497, 0.161497)
-texture = ExtResource("38_come4")
+position = Vector2(909.99994, 381)
+scale = Vector2(0.32608846, 0.32608846)
+texture = ExtResource("3_rqtf5")
 
 [node name="Raka_5" type="Sprite2D" parent="CanvasGroup" unique_id=1310139587]
 modulate = Color(0.4, 0.4, 0.4, 1)
@@ -497,6 +497,7 @@ libraries/ = SubResource("AnimationLibrary_cyx1q")
 stream = ExtResource("33_swlj1")
 
 [node name="MonitorPanel" type="Panel" parent="MonitorCanvas" unique_id=101482524]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -522,17 +523,19 @@ metadata/_edit_use_anchors_ = true
 [node name="CameraViewport" type="SubViewport" parent="MonitorCanvas/MonitorPanel/SubViewportContainer" unique_id=139809911]
 handle_input_locally = false
 size = Vector2i(1220, 730)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="RoomCam1" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=453955779 instance=ExtResource("3_4c57u")]
-position = Vector2(-1.13687e-13, 18)
+offset_top = 18.0
+offset_bottom = 18.0
 
 [node name="RoomCam2" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=2043130112 instance=ExtResource("4_efxa6")]
 visible = false
 
 [node name="RoomCam3" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=1379815823 instance=ExtResource("5_4c57u")]
 visible = false
-position = Vector2(0, 10)
+offset_top = 10.0
+offset_bottom = 10.0
 
 [node name="RoomCam4" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=26807322 instance=ExtResource("6_kek77")]
 visible = false
@@ -542,7 +545,10 @@ visible = false
 
 [node name="RoomCam6" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=84152607 instance=ExtResource("12_swlj1")]
 visible = false
-position = Vector2(-5.99799, 61.0016)
+offset_left = -5.99799
+offset_top = 61.0016
+offset_right = -5.99799
+offset_bottom = 61.0016
 scale = Vector2(0.9, 0.895)
 
 [node name="MapRoom" type="TextureRect" parent="MonitorCanvas/MonitorPanel" unique_id=1560770395]

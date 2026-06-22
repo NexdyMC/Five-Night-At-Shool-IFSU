@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqyus77udo73l"]
+[gd_scene format=3 uid="uid://dqyus77udo73l"]
 
 [ext_resource type="Script" uid="uid://dxha7hdgp3cn6" path="res://script/room_cam_3.gd" id="1_gxwm3"]
 [ext_resource type="Texture2D" uid="uid://b8f8yv4gus8lr" path="res://textures/room_3/local_2_0.png" id="2_gxwm3"]
@@ -7,33 +7,36 @@
 [ext_resource type="Texture2D" uid="uid://dqnsumqc6i3jn" path="res://textures/ui/Sprite41_0.png" id="6_ip453"]
 [ext_resource type="Texture2D" uid="uid://b4sqrgp72aa61" path="res://textures/ui/Sprite42_0.png" id="7_f7ftl"]
 
-[node name="room-cam-3" type="Sprite2D"]
+[node name="RoomCam3" type="Control" unique_id=1622978294]
+layout_mode = 3
+anchors_preset = 0
 scale = Vector2(0.902344, 0.902344)
 script = ExtResource("1_gxwm3")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1821014217]
 
-[node name="room_3" type="Sprite2D" parent="CanvasGroup"]
+[node name="room_3" type="Sprite2D" parent="CanvasGroup" unique_id=510125777]
 position = Vector2(859.982, 398.961)
 scale = Vector2(1.12185, 1.12185)
 texture = ExtResource("2_gxwm3")
 
-[node name="TachyonEye" type="Sprite2D" parent="."]
+[node name="TachyonEye" type="Sprite2D" parent="." unique_id=819021963]
 visible = false
 position = Vector2(669.949, 398.684)
 scale = Vector2(1.04257, 1.04257)
 texture = ExtResource("3_a2h4m")
 
-[node name="barr_value" type="Sprite2D" parent="."]
+[node name="barr_value" type="Sprite2D" parent="." unique_id=1151223158]
 position = Vector2(250.459, 646.632)
 scale = Vector2(5.40043, 0.605518)
 texture = ExtResource("5_5ilbx")
 
-[node name="tokaiteio_barr" type="Sprite2D" parent="."]
+[node name="tokaiteio_barr" type="Sprite2D" parent="." unique_id=1125638843]
 position = Vector2(241.593, 582.926)
 texture = ExtResource("6_ip453")
 
-[node name="btn_estability" type="TextureButton" parent="."]
+[node name="btn_estability" type="TextureButton" parent="." unique_id=397780326]
+layout_mode = 0
 offset_left = 439.965
 offset_top = 610.632
 offset_right = 680.965
@@ -42,4 +45,4 @@ texture_normal = ExtResource("7_f7ftl")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="sound_room_karoke" type="AudioStreamPlayer" parent="."]
+[node name="sound_room_karoke" type="AudioStreamPlayer" parent="." unique_id=1500872297]

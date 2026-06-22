@@ -1,10 +1,9 @@
-extends Sprite2D
+extends Control
 
 # --- ONREADY VARIABLES ---
 @onready var room_3 : CanvasGroup = $CanvasGroup
 @onready var room_texture_3 : Sprite2D = $CanvasGroup/room_3
 @onready var room_karoke : AudioStreamPlayer = $sound_room_karoke
-@onready var TachyonJump  : AudioStreamPlayer = $TachyonJump 
 @onready var tachyon_sprite : Sprite2D = $TachyonEye 
 
 # --- Exstabilizar ---

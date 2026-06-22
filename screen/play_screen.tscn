@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bify5qmjmdpux" path="res://textures/charakter/raka_2_1.png" id="2_icun7"]
 [ext_resource type="Texture2D" uid="uid://dfsq7egw4j02g" path="res://textures/charakter/aldian_1.png" id="3_dq77n"]
 
-[node name="play_screen" type="Control" unique_id=719365805]
+[node name="Play" type="Control" unique_id=719365805]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

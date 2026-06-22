@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://by4b2g3x5bxkw"]
+
+[ext_resource type="Script" uid="uid://ch4lkijxt7qnn" path="res://script/room_cam_4.gd" id="1_1s34d"]
+[ext_resource type="Texture2D" uid="uid://bixg1pf70do8t" path="res://textures/room_4/local_4_0.png" id="2_nansx"]
+[ext_resource type="Texture2D" uid="uid://dfsq7egw4j02g" path="res://textures/charakter/aldian_1.png" id="3_x8nw3"]
+
+[node name="RoomCam4" type="Control" unique_id=448109164]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_1s34d")
+
+[node name="Timer" type="Timer" parent="." unique_id=1508903117]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=744229970]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup" unique_id=1775594411]
+offset_top = -177.0
+offset_right = 1764.0
+offset_bottom = 816.0
+texture = ExtResource("2_nansx")
+
+[node name="Aldian5" type="TextureRect" parent="CanvasGroup" unique_id=1234873695]
+offset_left = 530.8397
+offset_top = 292.57135
+offset_right = 2973.1167
+offset_bottom = 1757.0874
+scale = Vector2(0.43244, 0.43244)
+texture = ExtResource("3_x8nw3")

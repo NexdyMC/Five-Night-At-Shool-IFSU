@@ -1,10 +1,10 @@
 extends Control
 
-# Menghubungkan node Tekstur ke dalam script
-@onready var level_night = $Panel/LevelNight
-@onready var btn_new_game = $Panel/BtnNewGame
-@onready var btn_continue = $Panel/BtnContinue
-@onready var btn_exit = $Panel/BtnExit
+# Panel Menu
+@onready var level_night = $PanelMenu/BtnContinue/LevelNight
+@onready var btn_new_game = $PanelMenu/BtnNewGame
+@onready var btn_continue = $PanelMenu/BtnContinue
+@onready var btn_exit   = $PanelMenu/BtnExit
 @onready var btn_credit = $PanelInfo/BtnCredit
 
 func _ready():

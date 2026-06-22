@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dgboqy1ssjwta"]
+
+[ext_resource type="Script" uid="uid://di67ewci5hurx" path="res://script/room_cam_2.gd" id="1_n62yc"]
+[ext_resource type="Texture2D" uid="uid://ccari43f1ig7s" path="res://textures/room_2/local_2_0.png" id="2_jnabu"]
+[ext_resource type="Texture2D" uid="uid://dfsq7egw4j02g" path="res://textures/charakter/aldian_1.png" id="3_sqeeo"]
+[ext_resource type="Texture2D" uid="uid://cbw01fy7sg1q3" path="res://textures/charakter/raka_2.png" id="4_1gjvy"]
+[ext_resource type="Texture2D" uid="uid://cj5d8vvwsvvvc" path="res://textures/charakter/aldian_0.png" id="4_itb8o"]
+[ext_resource type="Texture2D" uid="uid://umfugph622kh" path="res://textures/charakter/raka_1_2.png" id="5_1gjvy"]
+
+[node name="RoomCam2" type="Control" unique_id=978177084]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_n62yc")
+
+[node name="Timer" type="Timer" parent="." unique_id=446240199]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=107656135]
+position = Vector2(-260.433, 0)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup" unique_id=667983371]
+offset_left = -14.4067
+offset_top = -115.255
+offset_right = 1687.59
+offset_bottom = 842.745
+texture = ExtResource("2_jnabu")
+
+[node name="Aldian3" type="TextureRect" parent="CanvasGroup" unique_id=805609787]
+offset_left = 103.06508
+offset_top = 294.7878
+offset_right = 3170.7407
+offset_bottom = 2022.7517
+scale = Vector2(0.341174, 0.341174)
+texture = ExtResource("3_sqeeo")
+
+[node name="Aldian4" type="TextureRect" parent="CanvasGroup" unique_id=1636913190]
+offset_left = 804.5714
+offset_top = 381.22934
+offset_right = 3755.8325
+offset_bottom = 2043.6193
+scale = Vector2(0.36023, 0.36023)
+texture = ExtResource("4_itb8o")
+
+[node name="Raka3" type="TextureRect" parent="CanvasGroup" unique_id=703468884]
+offset_left = 597.333
+offset_top = 203.913
+offset_right = 2659.33
+offset_bottom = 1365.91
+scale = Vector2(0.24141, 0.24141)
+texture = ExtResource("4_1gjvy")
+metadata/_edit_use_anchors_ = true
+
+[node name="Raka4" type="TextureRect" parent="CanvasGroup" unique_id=1130132636]
+offset_left = 575.1688
+offset_top = 271.51508
+offset_right = 3217.3008
+offset_bottom = 1783.4907
+scale = Vector2(0.398718, 0.398718)
+texture = ExtResource("5_1gjvy")
+metadata/_edit_use_anchors_ = true
+
+[node name="jumpscare" type="AudioStreamPlayer" parent="." unique_id=1136146431]

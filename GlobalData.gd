@@ -12,6 +12,12 @@ var stability : float = 100.0
 var level_night : int = 1
 var GameOverId : int = 0
 
+var Gameover : Array = [
+	"If Aldian is in front of you, put on your mask immediately.",
+	"If Raka is in front of you, put on your mask immediately.",
+	"Always check camera 5 before he attacks.",
+	"Ensure room 3 is stabilized before he attacks."
+]
 # ==========================================
 # LEVEL KARAKTER (NIGHT 1 DEFAULT)
 # ==========================================

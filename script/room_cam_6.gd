@@ -1,9 +1,9 @@
-extends Sprite2D
+extends Control
 
 # --- ONREADY VARIABLES ---
 @onready var room_4 : CanvasGroup = $CanvasGroup
 
-@onready var Raka_step_1 : TextureRect = $CanvasGroup/Raka_1
+@onready var raka_step_1 : TextureRect = $CanvasGroup/Raka1
 
 # --- EXPORT VARIABLES ---
 @export var kecepatan_geser : float = 50.0
@@ -12,12 +12,12 @@ extends Sprite2D
 
 
 func _ready() -> void:
-	Raka_step_1.visible = false
+	raka_step_1.visible = false
 
 func _process(delta: float) -> void:
 	Global.camera_position_bolak_balik(room_4, 50.0, delta, -200, -0)
 	
 	if Global.suzuka_state == 1:
-		Raka_step_1.visible = true
+		raka_step_1.visible = true
 	else:
-		Raka_step_1.visible = false
+		raka_step_1.visible = false

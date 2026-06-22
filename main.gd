@@ -10,13 +10,14 @@ extends Node2D
 @onready var timer_dadu : Timer = $TimeCharakterState
 @onready var object_mask_on : TextureRect = $CanvasGroup/MaskOn
 @onready var object_monitor : CanvasLayer = $MonitorCanvas
+
 # sprite panel monitor
-@onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam1"
-@onready var object_cam2_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam2"
-@onready var object_cam3_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam3"
-@onready var object_cam4_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam4"
-@onready var object_cam5_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam5"
-@onready var object_cam6_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam6"
+@onready var object_cam1_panel: Control = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam1"
+@onready var object_cam2_panel: Control = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam2"
+@onready var object_cam3_panel: Control = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam3"
+@onready var object_cam4_panel: Control = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam4"
+@onready var object_cam5_panel: Control = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam5"
+@onready var object_cam6_panel: Control = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam6"
 
 # map camera button
 @onready var btn_cam1: TextureButton = $MonitorCanvas/MonitorPanel/MapRoom/BtnCam1

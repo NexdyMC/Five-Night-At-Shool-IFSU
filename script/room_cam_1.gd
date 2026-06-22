@@ -1,9 +1,9 @@
-extends Sprite2D
+extends Control
 
 #region variabel
 @onready var room_1 : CanvasGroup = $"CanvasGroup"
-@onready var Raka_step_1 : TextureRect = $CanvasGroup/Raka_1
-@onready var Raka_step_2 : TextureRect = $CanvasGroup/Raka_2
+@onready var aldian_step_1 : TextureRect = $CanvasGroup/Aldian1
+@onready var aldian_step_2 : TextureRect = $CanvasGroup/Aldian2
 
 @export var batas_kiri : float = 0.0
 @export var batas_kanan : float = 240.0
@@ -20,14 +20,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Global.voltar_state == 1:
-		Raka_step_1.visible = true
-		Raka_step_2.visible = false
+		aldian_step_1.visible = true
+		aldian_step_2.visible = false
 	elif Global.voltar_state == 2:
-		Raka_step_1.visible = false
-		Raka_step_2.visible = true
+		aldian_step_1.visible = false
+		aldian_step_2.visible = true
 	else:
-		Raka_step_1.visible = false
-		Raka_step_2.visible = false
+		aldian_step_1.visible = false
+		aldian_step_2.visible = false
 
 
 	Global.camera_position_bolak_balik(room_1, 50.0, delta, batas_kiri, batas_kanan)

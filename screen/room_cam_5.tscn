@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b2hwmxl3ll17m"]
+
+[ext_resource type="Script" uid="uid://ix4ykls6d2ec" path="res://script/room_cam_5.gd" id="1_setjy"]
+[ext_resource type="Texture2D" uid="uid://ckdgt0dv7w0qn" path="res://textures/room_5/local_5_0.png" id="2_epypp"]
+
+[node name="RoomCam5" type="Control" unique_id=779953228]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.902344, 0.902344)
+script = ExtResource("1_setjy")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1615740674]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup" unique_id=1665476553]
+offset_top = -68.71
+offset_right = 1755.0
+offset_bottom = 809.29
+texture = ExtResource("2_epypp")
+
+[node name="Timer" type="Timer" parent="." unique_id=2140766898]
+
+[node name="TimerMaju" type="Timer" parent="." unique_id=1686661335]
+wait_time = 10.0
+
+[node name="TimerTutorial" type="Timer" parent="." unique_id=2059067235]
+wait_time = 20.0
+one_shot = true
+
+[node name="TimerMundur" type="Timer" parent="." unique_id=367276554]
+wait_time = 0.2
+one_shot = true

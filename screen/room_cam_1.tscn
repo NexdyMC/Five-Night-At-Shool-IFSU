@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bh7k3qa8u3tf1"]
+
+[ext_resource type="Script" uid="uid://dj5w77qipukp4" path="res://script/room_cam_1.gd" id="1_mxfea"]
+[ext_resource type="Texture2D" uid="uid://c6rbqxojgtdw8" path="res://textures/room_1/room_1_0.png" id="2_nlq54"]
+[ext_resource type="Texture2D" uid="uid://cj5d8vvwsvvvc" path="res://textures/charakter/aldian_0.png" id="3_h4lqx"]
+[ext_resource type="Texture2D" uid="uid://dfsq7egw4j02g" path="res://textures/charakter/aldian_1.png" id="4_ry7f2"]
+
+[node name="RoomCam1" type="Control" unique_id=847724900]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.05, 1.05)
+script = ExtResource("1_mxfea")
+batas_kiri = -150.0
+batas_kanan = 0.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1347971937]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1370077208]
+position = Vector2(0, 323.81)
+scale = Vector2(1.06633, 1.00945)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup" unique_id=2027945296]
+offset_left = -7.14511
+offset_top = -335.874
+offset_right = 1285.85
+offset_bottom = 384.126
+texture = ExtResource("2_nlq54")
+metadata/_edit_use_anchors_ = true
+
+[node name="Aldian1" type="TextureRect" parent="CanvasGroup" unique_id=1657149810]
+offset_left = 594.83136
+offset_top = -95.290375
+offset_right = 1874.8323
+offset_bottom = 625.7096
+scale = Vector2(0.4603, 0.486237)
+texture = ExtResource("3_h4lqx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Aldian2" type="TextureRect" parent="CanvasGroup" unique_id=1063005767]
+offset_left = 564.4639
+offset_top = -80.19499
+offset_right = 1844.4639
+offset_bottom = 640.805
+scale = Vector2(0.691668, 0.730643)
+texture = ExtResource("4_ry7f2")
+metadata/_edit_use_anchors_ = true

@@ -1,8 +1,7 @@
-extends Node2D
+extends Control
 
 #region Variabel and Node
 
-@onready var label  : Label    = $Label
 @onready var room_5 : CanvasGroup = $CanvasGroup
 @onready var room_5_0 : TextureRect = $CanvasGroup/TextureRect
 
@@ -12,7 +11,7 @@ var room_step_2 = preload("res://textures/room_5/local_5_golshi_2_0.png")
 var room_step_3 = preload("res://textures/room_5/local_5_golshi_3_0.png")
 var room_step_4 = preload("res://textures/room_5/local_5_golshi_4_0.png")
 
-var game_over = load("res://sounds/jumpscare/GoldShip_susto.wav")
+
 
 #endregion
 

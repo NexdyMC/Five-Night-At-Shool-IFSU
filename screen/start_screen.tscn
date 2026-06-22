@@ -1,10 +1,69 @@
-[gd_scene format=3 uid="uid://25iwjiu33j77"]
+[gd_scene format=3 uid="uid://dxa5fyqdor0d8"]
 
-[ext_resource type="PackedScene" uid="uid://25iwjiu33j77" path="res://screen/start_screen.tscn" id="1_ddlue"]
+[ext_resource type="Script" uid="uid://baewynqoypk74" path="res://script/start_screen.gd" id="1_ddlue"]
+[ext_resource type="Texture2D" uid="uid://bg45xnla0en4e" path="res://textures/main_screen.png" id="2_4u8hn"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4u8hn"]
+[node name="Control" type="Control" unique_id=620559849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ddlue")
 
-[node name="StartScreen" unique_id=330470029 instance=ExtResource("1_ddlue")]
+[node name="Background" type="TextureRect" parent="." unique_id=236705025]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -628.0205
+offset_top = -553.5
+offset_right = 628.0205
+offset_bottom = 553.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4u8hn")
+expand_mode = 1
 
-[node name="Panel" parent="." index="1"]
-theme_override_styles/panel = SubResource("StyleBoxEmpty_4u8hn")
+[node name="Title" type="TextureRect" parent="." unique_id=1596147853]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelMenu" type="Panel" parent="." unique_id=1999410656]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnNewGame" type="TextureButton" parent="PanelMenu" unique_id=1362917554]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnContinue" type="TextureButton" parent="PanelMenu" unique_id=1366286014]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelNight" type="TextureRect" parent="PanelMenu/BtnContinue" unique_id=1442418071]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnExit" type="TextureButton" parent="PanelMenu" unique_id=404959195]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelInfo" type="Panel" parent="." unique_id=1847353588]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnCredit" type="TextureButton" parent="PanelInfo" unique_id=854407098]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
