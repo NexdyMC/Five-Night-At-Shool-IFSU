@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmarefyi1fysl"]
+[gd_scene format=3 uid="uid://dmarefyi1fysl"]
 
 [ext_resource type="Script" uid="uid://sg754eclfa8j" path="res://script/loading_screen.gd" id="1_kgmty"]
 [ext_resource type="Texture2D" uid="uid://bbmbboia1lejc" path="res://textures/text/loading.png" id="2_xlv28"]
@@ -6,7 +6,45 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kgmty"]
 
-[node name="Control" type="Control"]
+[sub_resource type="Animation" id="Animation_c0da3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lp8dl"]
+resource_name = "anim_blink"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(0.8408964, 1, 0.8408964),
+"update": 0,
+"values": [Color(0.33333334, 0.33333334, 0.33333334, 1), Color(0.93333334, 0.93333334, 0.93333334, 1), Color(0.33333334, 0.33333334, 0.33333334, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5ya6"]
+_data = {
+&"RESET": SubResource("Animation_c0da3"),
+&"anim_blink": SubResource("Animation_lp8dl")
+}
+
+[node name="Control" type="Control" unique_id=1640886210]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kgmty")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1865337883]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
@@ -26,8 +64,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_kgmty")
 
-[node name="TxLoading" type="TextureRect" parent="."]
-layout_mode = 1
+[node name="AnimTxLoading" type="AnimationPlayer" parent="." unique_id=1591028108]
+root_node = NodePath("TxLoading")
+libraries/ = SubResource("AnimationLibrary_c5ya6")
+
+[node name="TxLoading" type="TextureRect" parent="AnimTxLoading" unique_id=127722162]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -41,17 +82,17 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("2_xlv28")
 
-[node name="ProgressLabel" type="Label" parent="."]
+[node name="ProgressLabel" type="Label" parent="." unique_id=1556804450]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -280.0
-offset_top = -88.0
-offset_right = -199.0
-offset_bottom = -40.0
+offset_left = -272.0
+offset_top = 24.0
+offset_right = -191.0
+offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_c0da3")

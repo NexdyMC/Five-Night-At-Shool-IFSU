@@ -5,16 +5,17 @@ const MAIN_GAME_SCENE: String = "res://main.tscn"
 
 #@onready var progress_bar: ProgressBar = $ProgressBar
 @onready var progress_label: Label = $ProgressLabel
-
+@onready var anim_tx_loading : AnimationPlayer = $AnimTxLoading
 var progress: Array = []
 var scene_load_status: int = 0
 
 func _ready() -> void:
 	# 1. Meminta Godot untuk mulai memuat scene game di background
 	ResourceLoader.load_threaded_request(MAIN_GAME_SCENE)
-
+	anim_tx_loading.play("anim_blink")
+	
 func _process(_delta: float) -> void:
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(10.0).timeout
 	# 2. Memeriksa status proses pemuatan setiap frame
 	scene_load_status = ResourceLoader.load_threaded_get_status(MAIN_GAME_SCENE, progress)
 	
