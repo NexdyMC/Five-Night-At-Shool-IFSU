@@ -6,9 +6,17 @@ extends Control
 @onready var btn_continue = $PanelMenu/BtnContinue
 @onready var btn_exit   = $PanelMenu/BtnExit
 @onready var btn_credit = $PanelInfo/BtnCredit
-
+@onready var btn_fullscreen_off = $PanelSetting/BtnFullscreenOff
+@onready var btn_fullscreen_on = $PanelSetting/BtnFullscreenOn
 func _ready():
-	level_night.visible = false
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	DisplayServer.window_set_size(Vector2i(1200, 720))
+	_center_window() 
+
+	btn_fullscreen_off.visible = false  # Diubah ke false karena tombol "Off" sudah ditekan
+	btn_fullscreen_on.visible = true    # Diubah ke true agar tombol "On" muncul lagi
+
+	level_night.visible = false 
 	
 
 
@@ -61,3 +69,24 @@ func _on_btn_credit_mouse_entered() -> void:
 func _on_btn_credit_mouse_exited() -> void:
 	_btn_normal(btn_credit)
 #endregion
+
+func _on_btn_fullscreen_off_pressed() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	DisplayServer.window_set_size(Vector2i(1200, 720))
+	_center_window() 
+
+	btn_fullscreen_off.visible = false  # Diubah ke false karena tombol "Off" sudah ditekan
+	btn_fullscreen_on.visible = true    # Diubah ke true agar tombol "On" muncul lagi
+
+func _on_btn_fullscreen_on_pressed() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
+	btn_fullscreen_off.visible = true   
+	btn_fullscreen_on.visible = false  
+	
+func _center_window() -> void:
+	var screen_id = DisplayServer.window_get_current_screen()
+	var screen_size = DisplayServer.screen_get_size(screen_id)
+	var window_size = DisplayServer.window_get_size()
+	var target_pos = (screen_size - window_size) / 2
+	DisplayServer.window_set_position(target_pos)
