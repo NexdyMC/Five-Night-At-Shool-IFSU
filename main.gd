@@ -8,8 +8,8 @@ extends Node2D
 @onready var vodka_step_5 : Sprite2D = $CanvasGroup/Raka_5
 @onready var suzuka_step_5 : Sprite2D = $CanvasGroup/SuzukaStep5
 @onready var timer_dadu : Timer = $TimeCharakterState
-@onready var object_mask_on: TextureRect = $CanvasGroup/MaskOn
-
+@onready var object_mask_on : TextureRect = $CanvasGroup/MaskOn
+@onready var object_monitor : CanvasLayer = $MonitorCanvas
 # sprite panel monitor
 @onready var object_cam1_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam1"
 @onready var object_cam2_panel: Sprite2D = $"MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport/RoomCam2"

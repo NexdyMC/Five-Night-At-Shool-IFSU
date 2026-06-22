@@ -1,9 +1,9 @@
-[gd_scene load_steps=88 format=3 uid="uid://gvjh8mhs53bb"]
+[gd_scene format=3 uid="uid://gvjh8mhs53bb"]
 
 [ext_resource type="Script" uid="uid://dj7kshfwbkygr" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://ckf61fourcvtg" path="res://textures/scurity.png" id="2_getpj"]
+[ext_resource type="Texture2D" uid="uid://dmdx5v0odmur8" path="res://textures/room_scurity/room_scurity.png" id="2_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://bh7k3qa8u3tf1" path="res://screen/room-cam-1.tscn" id="3_4c57u"]
-[ext_resource type="Texture2D" uid="uid://cbw01fy7sg1q3" path="res://textures/charakter/raka_2.png" id="4_1vm84"]
+[ext_resource type="Texture2D" uid="uid://bify5qmjmdpux" path="res://textures/charakter/raka_2_1.png" id="4_1vm84"]
 [ext_resource type="PackedScene" uid="uid://dgboqy1ssjwta" path="res://screen/room-cam-2.tscn" id="4_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dqyus77udo73l" path="res://screen/room-cam-3.tscn" id="5_4c57u"]
 [ext_resource type="PackedScene" uid="uid://by4b2g3x5bxkw" path="res://screen/room-cam-4.tscn" id="6_kek77"]
@@ -67,54 +67,6 @@
 [ext_resource type="Texture2D" uid="uid://dfy7sg2wvg74h" path="res://animations/susto_jump/digital_susto_19.png" id="82_inymm"]
 [ext_resource type="Texture2D" uid="uid://6plf0s1bl01b" path="res://animations/susto_jump/digital_susto_20.png" id="83_jcxqu"]
 [ext_resource type="AudioStream" uid="uid://culi0bnnaedpm" path="res://sounds/jumpscare/GoldShip_susto.wav" id="84_ppx11"]
-
-[sub_resource type="InputEventKey" id="InputEventKey_cegan"]
-device = -1
-keycode = 49
-unicode = 49
-
-[sub_resource type="Shortcut" id="Shortcut_82xsv"]
-events = [SubResource("InputEventKey_cegan")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_getpj"]
-device = -1
-keycode = 50
-unicode = 50
-
-[sub_resource type="Shortcut" id="Shortcut_ryguw"]
-events = [SubResource("InputEventKey_getpj")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_d13ii"]
-device = -1
-keycode = 51
-unicode = 51
-
-[sub_resource type="Shortcut" id="Shortcut_1u8w0"]
-events = [SubResource("InputEventKey_d13ii")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_0odxb"]
-device = -1
-keycode = 52
-unicode = 52
-
-[sub_resource type="Shortcut" id="Shortcut_lswn8"]
-events = [SubResource("InputEventKey_0odxb")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_a6jrf"]
-device = -1
-keycode = 53
-unicode = 53
-
-[sub_resource type="Shortcut" id="Shortcut_xuqvo"]
-events = [SubResource("InputEventKey_a6jrf")]
-
-[sub_resource type="InputEventKey" id="InputEventKey_swlj1"]
-device = -1
-keycode = 54
-unicode = 54
-
-[sub_resource type="Shortcut" id="Shortcut_yysqy"]
-events = [SubResource("InputEventKey_swlj1")]
 
 [sub_resource type="Animation" id="Animation_gx4rg"]
 length = 0.001
@@ -182,6 +134,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MonitorCanvas/AnimCamera:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_ppx11"]
@@ -323,6 +287,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MonitorCanvas/AnimCamera:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.007863872, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cyx1q"]
 _data = {
@@ -331,6 +307,54 @@ _data = {
 &"anim_camera_effect": SubResource("Animation_ppx11"),
 &"anim_camera_open": SubResource("Animation_wu3dr")
 }
+
+[sub_resource type="InputEventKey" id="InputEventKey_cegan"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_82xsv"]
+events = [SubResource("InputEventKey_cegan")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_getpj"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_ryguw"]
+events = [SubResource("InputEventKey_getpj")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_d13ii"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_1u8w0"]
+events = [SubResource("InputEventKey_d13ii")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_0odxb"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_lswn8"]
+events = [SubResource("InputEventKey_0odxb")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_a6jrf"]
+device = -1
+keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_xuqvo"]
+events = [SubResource("InputEventKey_a6jrf")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_swlj1"]
+device = -1
+keycode = 54
+unicode = 54
+
+[sub_resource type="Shortcut" id="Shortcut_yysqy"]
+events = [SubResource("InputEventKey_swlj1")]
 
 [sub_resource type="Animation" id="Animation_dij0e"]
 length = 0.001
@@ -417,31 +441,31 @@ _data = {
 &"susto_jump": SubResource("Animation_0arob")
 }
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=192457901]
 script = ExtResource("1_ig7tw")
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=353914441]
 
-[node name="RoomScurity" type="TextureRect" parent="CanvasGroup"]
-offset_right = 1763.0
-offset_bottom = 992.0
-texture = ExtResource("2_getpj")
+[node name="RoomScurity" type="TextureRect" parent="CanvasGroup" unique_id=624212198]
+offset_right = 1313.3639
+offset_bottom = 739.0
+texture = ExtResource("2_rqtf5")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="OfficeSprite" type="Sprite2D" parent="CanvasGroup"]
+[node name="OfficeSprite" type="Sprite2D" parent="CanvasGroup" unique_id=1365334154]
 
-[node name="SuzukaStep5" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(1272, 504)
+[node name="SuzukaStep5" type="Sprite2D" parent="CanvasGroup" unique_id=1232146082]
+position = Vector2(951.0001, 386.99997)
 scale = Vector2(0.161497, 0.161497)
 texture = ExtResource("38_come4")
 
-[node name="Raka_5" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(507, 411)
-scale = Vector2(0.358625, 0.358625)
+[node name="Raka_5" type="Sprite2D" parent="CanvasGroup" unique_id=1310139587]
+modulate = Color(0.4, 0.4, 0.4, 1)
+position = Vector2(334, 415)
+scale = Vector2(0.8806457, 0.8806458)
 texture = ExtResource("4_1vm84")
 
-[node name="MaskOn" type="TextureRect" parent="CanvasGroup"]
+[node name="MaskOn" type="TextureRect" parent="CanvasGroup" unique_id=1772873424]
 visible = false
 offset_top = 8.0
 offset_right = 1213.0
@@ -449,28 +473,38 @@ offset_bottom = 736.0
 texture = ExtResource("23_d13ii")
 expand_mode = 1
 
-[node name="TextureButton" type="TextureButton" parent="CanvasGroup"]
-offset_left = 145.0
-offset_top = 400.0
-offset_right = 562.0
-offset_bottom = 717.0
+[node name="TextureButton" type="TextureButton" parent="CanvasGroup" unique_id=1968517126]
+offset_left = 120.0
+offset_top = 392.0
+offset_right = 537.0
+offset_bottom = 709.0
+focus_mode = 0
+action_mode = 0
+keep_pressed_outside = true
 texture_normal = ExtResource("22_ryguw")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AudioMask" type="AudioStreamPlayer" parent="CanvasGroup/TextureButton"]
+[node name="AudioMask" type="AudioStreamPlayer" parent="CanvasGroup/TextureButton" unique_id=1790500974]
 
-[node name="MonitorCanvas" type="CanvasLayer" parent="."]
+[node name="MonitorCanvas" type="CanvasLayer" parent="." unique_id=1657929939]
 
-[node name="MonitorPanel" type="Panel" parent="MonitorCanvas"]
-visible = false
+[node name="AnimCameraMonitor" type="AnimationPlayer" parent="MonitorCanvas" unique_id=1385952178]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cyx1q")
+
+[node name="AudioCamera" type="AudioStreamPlayer" parent="MonitorCanvas" unique_id=2108520912]
+stream = ExtResource("33_swlj1")
+
+[node name="MonitorPanel" type="Panel" parent="MonitorCanvas" unique_id=101482524]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MonitorCanvas/MonitorPanel"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MonitorCanvas/MonitorPanel" unique_id=1735457224]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.00833333
@@ -485,42 +519,55 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="CameraViewport" type="SubViewport" parent="MonitorCanvas/MonitorPanel/SubViewportContainer"]
+[node name="CameraViewport" type="SubViewport" parent="MonitorCanvas/MonitorPanel/SubViewportContainer" unique_id=139809911]
 handle_input_locally = false
 size = Vector2i(1220, 730)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
-[node name="RoomCam1" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("3_4c57u")]
+[node name="RoomCam1" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=453955779 instance=ExtResource("3_4c57u")]
 position = Vector2(-1.13687e-13, 18)
 
-[node name="RoomCam2" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("4_efxa6")]
+[node name="RoomCam2" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=2043130112 instance=ExtResource("4_efxa6")]
 visible = false
 
-[node name="RoomCam3" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("5_4c57u")]
+[node name="RoomCam3" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=1379815823 instance=ExtResource("5_4c57u")]
 visible = false
 position = Vector2(0, 10)
 
-[node name="RoomCam4" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("6_kek77")]
+[node name="RoomCam4" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=26807322 instance=ExtResource("6_kek77")]
 visible = false
 
-[node name="RoomCam5" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("8_efxa6")]
+[node name="RoomCam5" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=2133044061 instance=ExtResource("8_efxa6")]
 visible = false
 
-[node name="RoomCam6" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" instance=ExtResource("12_swlj1")]
+[node name="RoomCam6" parent="MonitorCanvas/MonitorPanel/SubViewportContainer/CameraViewport" unique_id=84152607 instance=ExtResource("12_swlj1")]
 visible = false
 position = Vector2(-5.99799, 61.0016)
 scale = Vector2(0.9, 0.895)
 
-[node name="MapRoom" type="Sprite2D" parent="MonitorCanvas/MonitorPanel"]
-position = Vector2(944.522, 504.592)
+[node name="MapRoom" type="TextureRect" parent="MonitorCanvas/MonitorPanel" unique_id=1560770395]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -424.0
+offset_right = 75.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(0.75542, 0.75542)
 texture = ExtResource("9_come4")
+expand_mode = 1
 
-[node name="BtnCam1" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom"]
-offset_left = -251.92
-offset_top = -53.0357
-offset_right = -111.92
-offset_bottom = 26.9643
+[node name="BtnCam1" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom" unique_id=1075299036]
+layout_mode = 0
+offset_left = 24.747253
+offset_top = 172.00467
+offset_right = 164.74725
+offset_bottom = 252.00467
 scale = Vector2(0.6, 0.6)
 disabled = true
 shortcut = SubResource("Shortcut_82xsv")
@@ -533,11 +580,12 @@ texture_disabled = ExtResource("9_ycdy4")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BtnCam2" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom"]
-offset_left = 40.8819
-offset_top = -50.8259
-offset_right = 180.882
-offset_bottom = 29.1741
+[node name="BtnCam2" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom" unique_id=1573436864]
+layout_mode = 0
+offset_left = 317.54935
+offset_top = 174.21445
+offset_right = 457.54947
+offset_bottom = 254.21445
 scale = Vector2(0.6, 0.6)
 shortcut = SubResource("Shortcut_ryguw")
 shortcut_feedback = false
@@ -549,11 +597,12 @@ texture_disabled = ExtResource("11_82xsv")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BtnCam3" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom"]
-offset_left = -251.92
-offset_top = 132.589
-offset_right = -111.92
-offset_bottom = 212.589
+[node name="BtnCam3" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom" unique_id=988733542]
+layout_mode = 0
+offset_left = 24.747253
+offset_top = 357.62933
+offset_right = 164.74725
+offset_bottom = 437.62933
 scale = Vector2(0.6, 0.6)
 shortcut = SubResource("Shortcut_1u8w0")
 shortcut_feedback = false
@@ -565,11 +614,12 @@ texture_disabled = ExtResource("13_ryguw")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BtnCam4" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom"]
-offset_left = 169.051
-offset_top = 141.429
-offset_right = 309.051
-offset_bottom = 221.429
+[node name="BtnCam4" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom" unique_id=560459288]
+layout_mode = 0
+offset_left = 445.71817
+offset_top = 366.46936
+offset_right = 585.718
+offset_bottom = 446.46936
 scale = Vector2(0.6, 0.6)
 shortcut = SubResource("Shortcut_lswn8")
 shortcut_feedback = false
@@ -581,11 +631,12 @@ texture_disabled = ExtResource("15_1u8w0")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BtnCam5" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom"]
-offset_left = -33.1473
-offset_top = -216.563
-offset_right = 106.853
-offset_bottom = -136.563
+[node name="BtnCam5" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom" unique_id=979670453]
+layout_mode = 0
+offset_left = 243.51996
+offset_top = 8.477379
+offset_right = 383.52023
+offset_bottom = 88.47738
 scale = Vector2(0.6, 0.6)
 shortcut = SubResource("Shortcut_xuqvo")
 shortcut_feedback = false
@@ -597,11 +648,12 @@ texture_disabled = ExtResource("17_lswn8")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="BtnCam6" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom"]
-offset_left = 170.075
-offset_top = -216.558
-offset_right = 310.075
-offset_bottom = -136.558
+[node name="BtnCam6" type="TextureButton" parent="MonitorCanvas/MonitorPanel/MapRoom" unique_id=445110547]
+layout_mode = 0
+offset_left = 446.74222
+offset_top = 8.482385
+offset_right = 586.7423
+offset_bottom = 88.48238
 scale = Vector2(0.6, 0.6)
 shortcut = SubResource("Shortcut_yysqy")
 shortcut_in_tooltip = false
@@ -612,50 +664,40 @@ texture_disabled = ExtResource("25_wu3dr")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="AnimCamera" type="TextureRect" parent="MonitorCanvas"]
+[node name="AnimCamera" type="TextureRect" parent="MonitorCanvas" unique_id=1263545424]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 568.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
 
-[node name="AnimCameraMonitor" type="AnimationPlayer" parent="MonitorCanvas"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_cyx1q")
-}
-
-[node name="AudioCamera" type="AudioStreamPlayer" parent="MonitorCanvas"]
-stream = ExtResource("32_23xmf")
-
-[node name="debug" type="CanvasLayer" parent="."]
+[node name="debug" type="CanvasLayer" parent="." unique_id=2001595230]
 layer = 99
 script = ExtResource("35_b1qrp")
 
-[node name="LabelDebug" type="Label" parent="debug"]
+[node name="LabelDebug" type="Label" parent="debug" unique_id=1103067763]
 offset_left = 64.0
 offset_top = 64.0
 offset_right = 104.0
 offset_bottom = 87.0
 
-[node name="AnimCharJump" type="AnimationPlayer" parent="."]
+[node name="AnimCharJump" type="AnimationPlayer" parent="." unique_id=1381034069]
 root_node = NodePath("CharakterJump")
-libraries = {
-&"": SubResource("AnimationLibrary_k1udn")
-}
+libraries/ = SubResource("AnimationLibrary_k1udn")
 speed_scale = 2.0
 
-[node name="CharakterJump" type="Sprite2D" parent="AnimCharJump"]
+[node name="CharakterJump" type="Sprite2D" parent="AnimCharJump" unique_id=859482359]
 self_modulate = Color(1, 1, 1, 0)
 position = Vector2(640, 360)
 scale = Vector2(0.9375, 0.9375)
 
-[node name="SoundCharakterJump" type="AudioStreamPlayer" parent="AnimCharJump"]
+[node name="SoundCharakterJump" type="AudioStreamPlayer" parent="AnimCharJump" unique_id=368678305]
 stream = ExtResource("84_ppx11")
 
-[node name="TimeCharakterState" type="Timer" parent="."]
+[node name="TimeCharakterState" type="Timer" parent="." unique_id=1002706235]
 
 [connection signal="pressed" from="CanvasGroup/TextureButton" to="." method="_on_mask_pressed"]
 [connection signal="pressed" from="MonitorCanvas/MonitorPanel/MapRoom/BtnCam1" to="." method="_on_cam_1_button_pressed"]
