@@ -34,6 +34,7 @@ extends Node2D
 # Animasi 
 @onready var anim_camera_monitor : AnimationPlayer = $MonitorCanvas/AnimCameraMonitor
 @onready var anim_char_jump : AnimationPlayer = $AnimCharJump
+@onready var anim_eye : AnimationPlayer = $AnimEye
 
 var sound_open_camera  = preload("res://sounds/camera/camera_close.wav")
 var sound_switch_camera  = preload("res://sounds/camera/camera_switch.wav")
@@ -44,6 +45,16 @@ var sound_mask_on = preload("res://sounds/mask/mask_on.wav")
 var cooldown_open_monitor : int = 0
 
 enum Karakter { TIDAK_ADA, SUZUKA, SPECIAL_WEEK, VOLTAR }
+var Dadu : Array = [
+	#Karakter.TIDAK_ADA,
+	#Karakter.TIDAK_ADA,
+	Karakter.SUZUKA,
+	Karakter.SPECIAL_WEEK,
+	Karakter.SPECIAL_WEEK,
+	Karakter.SPECIAL_WEEK,
+	Karakter.VOLTAR,
+	Karakter.VOLTAR
+]
 
 var sisi_dadu : Array = [
 	Karakter.TIDAK_ADA,
@@ -55,11 +66,12 @@ var sisi_dadu : Array = [
 	Karakter.VOLTAR,
 	Karakter.VOLTAR
 ]
-var block_time : Array = [7.0, 5.0, 3.0]
-
+#var block_time : Array = [7.0, 5.0, 3.0]
+var block_time : Array = [3.0]
 #endregion
 
 func _ready() -> void:
+	anim_eye.play("Anim_Start_Game")
 	Global.monitor_panel = false
 	object_monitor_panel.visible = false
 	
@@ -160,18 +172,17 @@ func _cek_entity_() -> void:
 		print("gameover")
 		
 	if Global.suzuka_state >= 7 and Global.is_mask_on == true:
-		Global.suzuka_state = 0
+		Global.suzuka_state = 1
 	elif Global.suzuka_state == 7 and  Global.is_mask_on == false:
+		Global.GameOverId = 0
+		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		print("gameover")
+		
+	if Global.ship_state == 5:
 		Global.GameOverId = 2
 		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
 		print("gameover")
 		
-	if Global.ship_state >= 6 and Global.is_mask_on == true:
-		Global.ship_state = 0
-	elif Global.suzuka_state == 6 and  Global.is_mask_on == false:
-		Global.GameOverId = 3
-		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
-		print("gameover")
 		
 func open_camera(id_camera: int, description: String):
 	anim_camera_monitor.play("anim_camera_effect")

@@ -441,6 +441,78 @@ _data = {
 &"susto_jump": SubResource("Animation_0arob")
 }
 
+[sub_resource type="Animation" id="Animation_0dhbp"]
+resource_name = "Anim_Buka_Mata"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimEye/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rqtf5"]
+resource_name = "Anim_Start_Game"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimEye/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cyx1q"]
+resource_name = "Anim_kedip_cepat"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimEye/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.4, 0.4, 0.4, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1vm84"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimEye/CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu3dr"]
+_data = {
+&"Anim_Buka_Mata": SubResource("Animation_0dhbp"),
+&"Anim_Start_Game": SubResource("Animation_rqtf5"),
+&"Anim_kedip_cepat": SubResource("Animation_cyx1q"),
+&"RESET": SubResource("Animation_1vm84")
+}
+
 [node name="Main" type="Node2D" unique_id=192457901]
 script = ExtResource("1_ig7tw")
 
@@ -704,6 +776,14 @@ scale = Vector2(0.9375, 0.9375)
 stream = ExtResource("84_ppx11")
 
 [node name="TimeCharakterState" type="Timer" parent="." unique_id=1002706235]
+
+[node name="AnimEye" type="AnimationPlayer" parent="." unique_id=707452941]
+libraries/ = SubResource("AnimationLibrary_wu3dr")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="AnimEye" unique_id=1256456495]
+modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="CanvasGroup/TextureButton" to="." method="_on_mask_pressed"]
 [connection signal="pressed" from="MonitorCanvas/MonitorPanel/MapRoom/BtnCam1" to="." method="_on_cam_1_button_pressed"]

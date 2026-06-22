@@ -18,6 +18,18 @@ var Gameover : Array = [
 	"Always check camera 5 before he attacks.",
 	"Ensure room 3 is stabilized before he attacks."
 ]
+
+enum Karakter { TIDAK_ADA, SUZUKA, SPECIAL_WEEK, VOLTAR }
+var Dadu : Array = [
+	Karakter.TIDAK_ADA,
+	Karakter.TIDAK_ADA,
+	Karakter.SUZUKA,
+	Karakter.SPECIAL_WEEK,
+	Karakter.SPECIAL_WEEK,
+	Karakter.SPECIAL_WEEK,
+	Karakter.VOLTAR,
+	Karakter.VOLTAR
+]
 # ==========================================
 # LEVEL KARAKTER (NIGHT 1 DEFAULT)
 # ==========================================
@@ -46,11 +58,13 @@ var sound_jumpscare : String = "none"
 # ==========================================
 # FUNCTION GLOBAL
 # ==========================================
+func ship_run():
+	ship_state += 1
 
-# Fungsi ini sekarang menerima objek apa saja (bisa CanvasGroup, Sprite2D, dll)
-# Kita juga butuh kamus (Dictionary) atau referensi status agar 'arah' tidak reset.
-# Cara termudah adalah meminta objek itu sendiri yang menyimpan variabel arahnya.
-
+func ship_back():
+	if ship_state >= 1:
+		ship_state = 1
+	
 func camera_position_bolak_balik(objek: Node2D, kecepatan: float, delta: float, batas_kiri: float, batas_kanan: float) -> void:
 	if not objek.has_meta("arah"):
 		objek.set_meta("arah", 1)

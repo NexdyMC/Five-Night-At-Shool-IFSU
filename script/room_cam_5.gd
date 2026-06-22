@@ -31,6 +31,13 @@ func _process(delta: float) -> void:
 			room_5_0.texture = room_step_4
 	else:
 		room_5_0.texture = room_step_0
+	
+	if Global.monitor_panel == true and Global.camera_room_id == 4 and (Global.ship_state == 2 or Global.ship_state == 3):
+		Global.ship_state = 1
+		print("gold ship mundur")
+	elif Global.ship_state == 4:
+		Global.ship_state = 4
+
 #region Function
 
 #endregion
