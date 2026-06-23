@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bquws2ytvraqm"]
+
+[ext_resource type="Script" uid="uid://dqr26xx8epk7i" path="res://script/alarm_screen.gd" id="1_s7lkx"]
+[ext_resource type="Texture2D" uid="uid://530u0vuawmsx" path="res://animations/alarm/am6_spt_1_0.png" id="2_w0wph"]
+[ext_resource type="Texture2D" uid="uid://dbf5tbb2rf0cn" path="res://animations/alarm/am6_spt_1_1.png" id="3_w57gp"]
+[ext_resource type="Texture2D" uid="uid://ihtqokkfhsmd" path="res://animations/alarm/am6_spt_1_2.png" id="4_uxjh3"]
+[ext_resource type="Texture2D" uid="uid://bf0o2idwf2gal" path="res://animations/alarm/am6_spt_1_3.png" id="5_1l83x"]
+[ext_resource type="Texture2D" uid="uid://cd8tkrkl7v68" path="res://animations/alarm/am6_spt_1_4.png" id="6_a0jti"]
+[ext_resource type="Texture2D" uid="uid://cnfc0lugufb76" path="res://animations/alarm/am6_spt_1_5.png" id="7_cf428"]
+[ext_resource type="Texture2D" uid="uid://bsa6abhoxqfbt" path="res://animations/alarm/am6_spt_1_6.png" id="8_t4si2"]
+[ext_resource type="Texture2D" uid="uid://d3ywduf0we5nm" path="res://animations/alarm/am6_spt_1_7.png" id="9_nwqh1"]
+[ext_resource type="Texture2D" uid="uid://br0tlev2gkrct" path="res://animations/alarm/am6_spt_1_8.png" id="10_gv51c"]
+[ext_resource type="Texture2D" uid="uid://bdi4lbpt18mdf" path="res://animations/alarm/am6_spt_1_9.png" id="11_npahj"]
+[ext_resource type="Texture2D" uid="uid://t2nftmu7h86i" path="res://animations/alarm/am6_spt_1_10.png" id="12_qlipv"]
+[ext_resource type="Texture2D" uid="uid://clvc0kh1lib4r" path="res://animations/alarm/am6_spt_1_11.png" id="13_v6rkg"]
+[ext_resource type="Texture2D" uid="uid://fcq16notm35s" path="res://animations/alarm/am6_spt_1_12.png" id="14_7e6tu"]
+[ext_resource type="Texture2D" uid="uid://1ur8yrx3lpno" path="res://animations/alarm/am6_spt_1_13.png" id="15_odfm0"]
+[ext_resource type="Texture2D" uid="uid://chkesv7sw4yja" path="res://animations/alarm/am6_spt_1_14.png" id="16_5sfi4"]
+[ext_resource type="Texture2D" uid="uid://4matdxv2p3x5" path="res://animations/alarm/am6_spt_1_15.png" id="17_8tbjy"]
+[ext_resource type="Texture2D" uid="uid://dujexymvw8jsu" path="res://animations/alarm/am6_spt_1_16.png" id="18_gnw5f"]
+[ext_resource type="Texture2D" uid="uid://l1noaj5dp8rw" path="res://animations/alarm/am6_spt_1_17.png" id="19_p4bry"]
+[ext_resource type="Texture2D" uid="uid://btjijamu00txj" path="res://animations/alarm/am6_spt_1_18.png" id="20_ckttk"]
+[ext_resource type="Texture2D" uid="uid://2dujicata857" path="res://animations/alarm/am6_spt_1_19.png" id="21_gn5vg"]
+[ext_resource type="Texture2D" uid="uid://ccj1nid8x7mhv" path="res://animations/alarm/am6_spt_1_20.png" id="22_j83ng"]
+[ext_resource type="Texture2D" uid="uid://bj60mlpmfpi5k" path="res://animations/alarm/am6_spt_1_21.png" id="23_lvv3r"]
+[ext_resource type="Texture2D" uid="uid://bh6csa6g4y4nj" path="res://animations/alarm/am6_spt_1_22.png" id="24_fdkb1"]
+[ext_resource type="Texture2D" uid="uid://dxvs2wmjyhdfj" path="res://animations/alarm/am6_spt_1_23.png" id="25_4j6k0"]
+[ext_resource type="AudioStream" uid="uid://hp8f2a3y8nu5" path="res://sounds/alarm.mp3" id="26_mr2bs"]
+
+[sub_resource type="Animation" id="Animation_oeicw"]
+resource_name = "Anim_Alarm"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.7999997, 3, 3.2, 3.4, 3.6000001, 3.8000002, 4, 4.1999993, 4.3999996, 4.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_w0wph"), ExtResource("3_w57gp"), ExtResource("4_uxjh3"), ExtResource("5_1l83x"), ExtResource("6_a0jti"), ExtResource("7_cf428"), ExtResource("8_t4si2"), ExtResource("9_nwqh1"), ExtResource("10_gv51c"), ExtResource("11_npahj"), ExtResource("12_qlipv"), ExtResource("13_v6rkg"), ExtResource("14_7e6tu"), ExtResource("15_odfm0"), ExtResource("16_5sfi4"), ExtResource("17_8tbjy"), ExtResource("18_gnw5f"), ExtResource("19_p4bry"), ExtResource("20_ckttk"), ExtResource("21_gn5vg"), ExtResource("22_j83ng"), ExtResource("23_lvv3r"), ExtResource("24_fdkb1"), ExtResource("25_4j6k0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.633333, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kvfew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_w0wph")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34win"]
+_data = {
+&"Anim_Alarm": SubResource("Animation_oeicw"),
+&"RESET": SubResource("Animation_kvfew")
+}
+
+[node name="Control" type="Control" unique_id=743108285]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s7lkx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1351952604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimAlarm" type="AnimationPlayer" parent="." unique_id=696858471]
+deterministic = true
+root_node = NodePath("Alarm")
+libraries/ = SubResource("AnimationLibrary_34win")
+playback_auto_capture_duration = 1.0
+
+[node name="Alarm" type="TextureRect" parent="AnimAlarm" unique_id=1927108807]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w0wph")
+
+[node name="AudioAlarm" type="AudioStreamPlayer" parent="." unique_id=1164077358]
+stream = ExtResource("26_mr2bs")
+volume_db = 10.535

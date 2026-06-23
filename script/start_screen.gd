@@ -1,4 +1,5 @@
 extends Control
+#region Variabel
 
 # Panel Menu
 @onready var level_night = $PanelMenu/BtnContinue/LevelNight
@@ -8,19 +9,11 @@ extends Control
 @onready var btn_credit = $PanelInfo/BtnCredit
 @onready var btn_fullscreen_off = $PanelSetting/BtnFullscreenOff
 @onready var btn_fullscreen_on = $PanelSetting/BtnFullscreenOn
+#endregion
+
 func _ready():
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	DisplayServer.window_set_size(Vector2i(1200, 720))
-	_center_window() 
-
-	btn_fullscreen_off.visible = false  # Diubah ke false karena tombol "Off" sudah ditekan
-	btn_fullscreen_on.visible = true    # Diubah ke true agar tombol "On" muncul lagi
-
 	level_night.visible = false 
-	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -68,7 +61,7 @@ func _on_btn_credit_mouse_entered() -> void:
 	_btn_hover(btn_credit)
 func _on_btn_credit_mouse_exited() -> void:
 	_btn_normal(btn_credit)
-#endregion
+
 
 func _on_btn_fullscreen_off_pressed() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -90,3 +83,5 @@ func _center_window() -> void:
 	var window_size = DisplayServer.window_get_size()
 	var target_pos = (screen_size - window_size) / 2
 	DisplayServer.window_set_position(target_pos)
+
+#endregion
