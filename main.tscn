@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://dy8g7oi0l1g28" path="res://animations/susto_jump/digital_susto_2.png" id="65_1yv1y"]
 [ext_resource type="Texture2D" uid="uid://gmvlpajo38d1" path="res://animations/susto_jump/digital_susto_3.png" id="66_5yh34"]
 [ext_resource type="Texture2D" uid="uid://hwmrvbgp0lp3" path="res://animations/susto_jump/digital_susto_4.png" id="67_pjuso"]
+[ext_resource type="AudioStream" uid="uid://fa5jec7n32ek" path="res://sounds/ambiente_2.wav" id="68_1vm84"]
 [ext_resource type="Texture2D" uid="uid://cficyafijsdlq" path="res://animations/susto_jump/digital_susto_5.png" id="68_23xmf"]
 [ext_resource type="Texture2D" uid="uid://bvog7qxpgh5oi" path="res://animations/susto_jump/digital_susto_6.png" id="69_swlj1"]
 [ext_resource type="Texture2D" uid="uid://co8a4xkm4da73" path="res://animations/susto_jump/digital_susto_7.png" id="70_yysqy"]
@@ -771,6 +772,10 @@ libraries/ = SubResource("AnimationLibrary_wu3dr")
 [node name="CanvasModulate" type="CanvasModulate" parent="AnimEye" unique_id=1256456495]
 modulate = Color(0, 0, 0, 0)
 self_modulate = Color(0, 0, 0, 1)
+
+[node name="AudioAmbies" type="AudioStreamPlayer" parent="." unique_id=1259991926]
+stream = ExtResource("68_1vm84")
+autoplay = true
 
 [connection signal="pressed" from="CanvasGroup/TextureButton" to="." method="_on_mask_pressed"]
 [connection signal="pressed" from="MonitorCanvas/MonitorPanel/MapRoom/BtnCam1" to="." method="_on_cam_1_button_pressed"]

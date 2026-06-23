@@ -11,6 +11,7 @@ var light : int = 0
 var stability : float = 100.0
 var level_night : int = 1
 var GameOverId : int = 0
+var is_fullscreen : bool = true
 
 var Gameover : Array = [
 	"If Aldian is in front of you, put on your mask immediately.",

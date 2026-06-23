@@ -12,7 +12,15 @@ extends Control
 #endregion
 
 func _ready():
-	level_night.visible = false 
+	level_night.visible = false
+	if Global.is_fullscreen == true:
+		Global.is_fullscreen == true
+		fullscreen_off()
+		print("fullscreen: off")
+	else:
+		Global.is_fullscreen == false
+		fullscreen_on()
+		print("fullscreen: off")
 
 func _process(delta: float) -> void:
 	pass
@@ -20,15 +28,15 @@ func _process(delta: float) -> void:
 #region Function Button
 
 func _on_btn_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://screen/loading_screen.tscn")
+	get_tree().change_scene_to_packed(preload("res://screen/loading_screen.tscn"))
 func _on_btn_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_packed(preload("res://main.tscn"))
 	Global.level_night = 1
 	
 func _on_btn_exit_pressed() -> void:
 	get_tree().quit()
 func _on_btn_credit_pressed() -> void:
-	get_tree().change_scene_to_file("res://screen/credit_screen.tscn")
+	get_tree().change_scene_to_packed(preload("res://screen/credit_screen.tscn"))
 
 # Func Btn Hover and Normal
 func _btn_hover(btn_hover : TextureButton):
@@ -62,20 +70,23 @@ func _on_btn_credit_mouse_entered() -> void:
 func _on_btn_credit_mouse_exited() -> void:
 	_btn_normal(btn_credit)
 
-
-func _on_btn_fullscreen_off_pressed() -> void:
+func fullscreen_on():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	DisplayServer.window_set_size(Vector2i(1200, 720))
 	_center_window() 
-
 	btn_fullscreen_off.visible = false  # Diubah ke false karena tombol "Off" sudah ditekan
 	btn_fullscreen_on.visible = true    # Diubah ke true agar tombol "On" muncul lagi
 
-func _on_btn_fullscreen_on_pressed() -> void:
+func fullscreen_off(): 
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	
 	btn_fullscreen_off.visible = true   
 	btn_fullscreen_on.visible = false  
+	
+func _on_btn_fullscreen_off_pressed() -> void:
+	fullscreen_on()
+
+func _on_btn_fullscreen_on_pressed() -> void:
+	fullscreen_off()
 	
 func _center_window() -> void:
 	var screen_id = DisplayServer.window_get_current_screen()

@@ -61,7 +61,7 @@ func _on_tim_3_mouse_exited() -> void:
 # Btn Hover Tim 4
 func _on_tim_4_mouse_entered() -> void:
 	_btn_hover(btn_tim4)
-	tim_info.text = "Pembuat Charekter "
+	tim_info.text = "Crafting Charekter "
 func _on_tim_4_mouse_exited() -> void:
 	_btn_normal(btn_tim4)
 	tim_info.text = ""

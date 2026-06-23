@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cq66nhm8awavj"]
+[gd_scene format=3 uid="uid://cq66nhm8awavj"]
 
 [ext_resource type="Script" uid="uid://3q8hvw4go0wj" path="res://script/credit_screen.gd" id="1_cxk2i"]
 [ext_resource type="Texture2D" uid="uid://mi65u81fhaa7" path="res://textures/text/tim1.png" id="1_t5hql"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bro5kpnmcv4cu" path="res://textures/text/tim5.png" id="5_2o8qe"]
 [ext_resource type="FontFile" uid="uid://geg3ni3chq6o" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="7_hahlh"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=2101995083]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cxk2i")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1431914599]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -27,12 +27,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackgroundCredit" type="TextureRect" parent="."]
+[node name="BackgroundCredit" type="TextureRect" parent="." unique_id=1118338032]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1428539939]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -46,32 +46,32 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Tim1" type="TextureRect" parent="VBoxContainer"]
+[node name="Tim1" type="TextureRect" parent="VBoxContainer" unique_id=1984488434]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_t5hql")
 
-[node name="Tim2" type="TextureRect" parent="VBoxContainer"]
+[node name="Tim2" type="TextureRect" parent="VBoxContainer" unique_id=220061727]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_cxk2i")
 
-[node name="Tim3" type="TextureRect" parent="VBoxContainer"]
+[node name="Tim3" type="TextureRect" parent="VBoxContainer" unique_id=654510448]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("3_hahlh")
 
-[node name="Tim4" type="TextureRect" parent="VBoxContainer"]
+[node name="Tim4" type="TextureRect" parent="VBoxContainer" unique_id=2017688224]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("4_ampg7")
 
-[node name="Tim5" type="TextureRect" parent="VBoxContainer"]
+[node name="Tim5" type="TextureRect" parent="VBoxContainer" unique_id=1097064692]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("5_2o8qe")
 
-[node name="TimInfo" type="Label" parent="."]
+[node name="TimInfo" type="Label" parent="." unique_id=927251496]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -87,7 +87,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("7_hahlh")
 horizontal_alignment = 1
 
-[node name="BtnBack" type="TextureButton" parent="."]
+[node name="BtnBack" type="TextureButton" parent="." unique_id=809762051]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

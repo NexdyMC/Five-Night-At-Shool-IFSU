@@ -1,5 +1,4 @@
 extends Node2D
-
 #region Variabel
 
 # Node Other
@@ -36,14 +35,17 @@ extends Node2D
 @onready var anim_char_jump : AnimationPlayer = $AnimCharJump
 @onready var anim_eye : AnimationPlayer = $AnimEye
 
+# Preload
 var sound_open_camera  = preload("res://sounds/camera/camera_close.wav")
 var sound_switch_camera  = preload("res://sounds/camera/camera_switch.wav")
 var sound_close_camera = preload("res://sounds/camera/camera_open.wav")
 var sound_fan_camera = preload("res://sounds/camera/fan.wav")
 var sound_mask_off = preload("res://sounds/mask/mask_off.wav")
 var sound_mask_on = preload("res://sounds/mask/mask_on.wav")
-var cooldown_open_monitor : int = 0
+var char_jump = preload("res://screen/gameover_screen.tscn")
 
+
+var cooldown_open_monitor : int = 0
 enum Karakter { TIDAK_ADA, SUZUKA, SPECIAL_WEEK, VOLTAR }
 var Dadu : Array = [
 	#Karakter.TIDAK_ADA,
@@ -168,19 +170,19 @@ func _cek_entity_() -> void:
 		Global.voltar_state = 0
 	elif Global.voltar_state == 6 and Global.is_mask_on == false:
 		Global.GameOverId = 1
-		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		get_tree().change_scene_to_packed(char_jump)
 		print("gameover")
 		
 	if Global.suzuka_state >= 7 and Global.is_mask_on == true:
 		Global.suzuka_state = 1
 	elif Global.suzuka_state == 7 and  Global.is_mask_on == false:
 		Global.GameOverId = 0
-		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		get_tree().change_scene_to_packed(char_jump)
 		print("gameover")
 		
 	if Global.ship_state == 5:
 		Global.GameOverId = 2
-		get_tree().change_scene_to_file("res://screen/gameover_screen.tscn")
+		get_tree().change_scene_to_packed(char_jump)
 		print("gameover")
 		
 		

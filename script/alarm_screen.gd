@@ -9,7 +9,7 @@ func _ready() -> void:
 	anim_alarm.play("Anim_Alarm")
 	audio_alarm.stream = Audio_Alarm
 	audio_alarm.play()
-	await get_tree().create_timer(10.0).timeout  
+	await get_tree().create_timer(12.0).timeout  
 	get_tree().change_scene_to_file("res://screen/loading_screen.tscn")
 
 
